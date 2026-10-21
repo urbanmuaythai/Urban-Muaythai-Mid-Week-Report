@@ -52,14 +52,6 @@
       "reason": "Not doing chores around the house so doesnt get to do muaythai"
     },
     {
-      "name": "Angus Nowlan",
-      "membership": "Short Term Membership Unlimited",
-      "end": "2026-10-19",
-      "recurring": "66.3",
-      "type": "Cancelled",
-      "reason": "Work Commitments"
-    },
-    {
       "name": "Giselle Brownlee-Smith.",
       "membership": "Accelerate  WEEKLY 6 month membership",
       "end": "2026-10-20",
@@ -82,14 +74,6 @@
       "recurring": "61.2",
       "type": "Cancelled",
       "reason": "Moved to the other side of the gc"
-    },
-    {
-      "name": "Julia Cielecka",
-      "membership": "Short Term Membership Unlimited",
-      "end": "2026-10-21",
-      "recurring": "70",
-      "type": "Cancelled",
-      "reason": "Personal"
     },
     {
       "name": "Jess Climan.",
@@ -330,15 +314,35 @@
   "prior": {
     "period": "9–15 October 2026 · full week",
     "gridCancellations": 14,
-    "operatingCancellations": 5,
+    "operatingCancellations": 4,
     "rollovers": 5,
     "straightToMembership": 3,
     "intro": 10,
     "saleRecords": 13,
     "deposits": 1179,
-    "adjustedNet": 3,
+    "adjustedNet": 4,
     "badDebtsExcluded": 9,
     "nmsRate": "5/12 = 41.7% (current NMS snapshot)",
-    "note": "Archived 16 October report showed 5/11 = 45.5%; NMS now classifies Caden as NO, so current snapshot has 12 eligible. Historical archive retained."
-  }
+    "note": "Archived 16 October report showed 5/11 = 45.5%; NMS now classifies Caden as NO, so current snapshot has 12 eligible. Historical archive retained.",
+    "shortTermExcluded": "Ari Miles"
+  },
+  "excludedShortTermCancellations": [
+    {
+      "name": "Angus Nowlan",
+      "membership": "Short Term Membership Unlimited",
+      "end": "2026-10-19",
+      "recurring": "66.3",
+      "type": "Cancelled",
+      "reason": "Work Commitments"
+    },
+    {
+      "name": "Julia Cielecka",
+      "membership": "Short Term Membership Unlimited",
+      "end": "2026-10-21",
+      "recurring": "70",
+      "type": "Cancelled",
+      "reason": "Personal"
+    }
+  ],
+  "cancellationPolicy": "Exclude Short Term, Kickstarter and trial endings from cancellations, as clarified by the user."
 }

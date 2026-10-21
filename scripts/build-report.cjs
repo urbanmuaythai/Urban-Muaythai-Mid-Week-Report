@@ -12,15 +12,16 @@ const total = d.sales.reduce((n, s) => n + (s.deposit ?? 0), 0);
 const missing = d.sales.filter(s => s.deposit === null).length;
 const net = d.daily.rollovers + d.daily.straightToMembership - count;
 const active = d.pipeline.filter(p => ['Jimmy Wreghitt.', 'Lukas nazal.', 'Mackenzie Constantino'].includes(p.name));
-assert.equal(count, 11);
+assert.equal(count, 9);
 assert.equal(new Set(d.operatingCancellations.map(c => c.name)).size, count);
-assert(d.operatingCancellations.every(c => c.end >= d.period.start && c.end <= d.period.cutoff && !/kickstarter|trial/i.test(c.membership)));
+assert(d.operatingCancellations.every(c => c.end >= d.period.start && c.end <= d.period.cutoff && !/kickstarter|trial|short term/i.test(c.membership)));
 assert.equal(total, 1000);
 assert.equal(missing, 1);
 assert.equal(d.sales.filter(s => s.type !== 'Membership').length, d.daily.intro);
 assert.equal(d.outcomes.filter(o => o.status === 'Rolled Over').length, d.rate.rolled);
 assert.equal(d.outcomes.filter(o => o.status === 'NO').length, d.rate.no);
-assert.equal(net, -11);
+assert.equal(net, -9);
+assert.equal(count, d.daily.cancellations);
 assert.equal(d.daily.cancellations, d.daily.adultCancellations + d.daily.teensCancellations + d.daily.kidsCancellations);
 assert.equal(d.daily.cancellations, 9);
 const table = (heads, rows) => `<div class="table"><table><thead><tr>${heads.map(h=>`<th>${esc(h)}</th>`).join('')}</tr></thead><tbody>${rows.map(r=>`<tr>${r.map(c=>`<td>${esc(c)}</td>`).join('')}</tr>`).join('\n')}</tbody></table></div>`;
@@ -35,10 +36,10 @@ const html = `<!doctype html>
 <header class="header"><div class="logo">UM</div><div><h1>Weekly Numbers — Full Reporting Week</h1><p>Urban Muaythai · Miami · Friday–Thursday reporting period</p></div></header>
 <div class="period"><div><h2>Fri 16 Oct – Thu 22 Oct 2026</h2><p>Full-week entries, including Thursday 22 October</p><span class="currentflag">Provisional · week not yet closed</span></div><div class="asof">Verified from live sheets<br>21 October 2026 · Brisbane</div></div>
 
-<section class="qa"><h3>Weekly management answers</h3><p class="intro">Full-week figures use all entries dated 16–22 October, including future-dated Thursday records. Daily Numbers is the headline grid total. The named operating records remain a separate reconciliation view; Kickstarter and trial endings stay in rollover reporting.</p><div class="qa-list">
-${qa('How many cancellations are recorded in Daily Numbers?', '9 in the grid · 11 named operating records', 'gold')}
+<section class="qa"><h3>Weekly management answers</h3><p class="intro">Full-week figures use all entries dated 16–22 October, including future-dated Thursday records. Cancellations exclude Short Term memberships, Kickstarter and trial endings. The nine counted named records match the Daily Numbers total.</p><div class="qa-list">
+${qa('How many cancellations are recorded?', '9 counted · matches Daily Numbers', 'gold')}
 ${qa('How many rollovers and direct joins are confirmed?', '0 rollovers · 0 confirmed STM')}
-${qa('Growth, loss or neutral?', 'Grid movement: −9 · operating records: −11', 'red')}
+${qa('Growth, loss or neutral?', 'Net movement: −9', 'red')}
 ${qa('Which rollover decisions need attention?', '3 unresolved · 2 overdue + 1 due today', 'gold')}
 ${qa('Rollover rate against the 80% target?', '0% — 0 of 1 eligible outcome', 'red')}
 ${qa('How many sales and deposits are recorded?', '5 intro · 6 sale records · $1,000*', 'gold')}
@@ -52,16 +53,17 @@ ${card('Unresolved this week', active.length, 'Lukas · Mackenzie · Jimmy')}
 ${card('Intro sales', 5, '3 phone · 1 walk-in · 1 other', 'gold')}
 </div>
 
-${section('Cancellation reconciliation — 9 in the grid, 11 operating records', 'Daily Numbers records 9 cancellations for 16–22 October: 6 through Wednesday plus 3 on Thursday. The named Cancellation Raw Dump contains 11 recurring memberships ending in the same full week. The net difference of 2 remains to be reconciled by name.', table(['View','Cancellations','Movement calculation','Net'], [
+${section('Cancellation reconciliation — 9 counted, matching Daily Numbers', 'Daily Numbers records 9 cancellations for 16–22 October: 6 through Wednesday plus 3 on Thursday. The named dump contains 11 recurring membership endings before applying the Short Term exclusion. Excluding Angus Nowlan and Julia Cielecka brings the counted total to 9.', table(['View','Cancellations','Movement calculation','Net'], [
 ['Daily Numbers grid','9 (6 adults, 1 teen, 2 kids)','0 RO + 0 STM − 9','−9'],
-['Named operating records','11 (8 adults, 3 kids/teens)','0 RO + 0 STM − 11','−11']
+['Named records after exclusions','9 (6 adults, 1 teen, 2 kids)','0 RO + 0 STM − 9','−9']
 ]) + '<p class="sub">These are calculated membership movements, not verified closing autopay roster totals. No new bad-debt exclusion is evidenced for this period. Mel’s nine exclusions applied to 9–15 October and are not subtracted again.</p>')}
 
-${section('Eleven operating cancellations — named evidence', 'Include recurring memberships with an effective end date from 16 through 22 October, including recurring Short Term Unlimited memberships. Thursday entries are included, even though the report was read on Wednesday. Exclude Kickstarter, trial and one-off product endings.', table(['Member','Effective end','Membership','Reason'], d.operatingCancellations.slice().sort((a,b)=>a.end.localeCompare(b.end)).map(c=>[c.name,c.end.slice(8)+' Oct',c.membership,c.reason])))}
+${section('Nine counted cancellations — named evidence', 'Count memberships with an effective end date from 16 through 22 October after excluding Short Term, Kickstarter, trial and one-off product endings. Thursday entries are included, even though the report was read on Wednesday.', table(['Member','Effective end','Membership','Reason'], d.operatingCancellations.slice().sort((a,b)=>a.end.localeCompare(b.end)).map(c=>[c.name,c.end.slice(8)+' Oct',c.membership,c.reason])))}
 
-${section('Intro endings — excluded from operating churn', 'These are visible for reconciliation and are excluded from the eleven operating cancellations. The full week includes both Wednesday and Thursday records.', table(['Member / record','Date','Treatment'], [
+${section('Short Term and intro endings — excluded from cancellations', 'These records are excluded from the nine counted cancellations. The full week includes both Wednesday and Thursday records.', table(['Member / record','Date','Treatment'], [
+...d.excludedShortTermCancellations.map(c=>[c.name,c.end.slice(8)+' Oct',c.membership+' — excluded under the Short Term rule']),
 ...d.excludedIntroEndings.map(c=>[c.name,c.end.slice(8)+' Oct',c.membership+' — rollover/trial outcome, not operating churn'])
-]) + '<p class="sub">Thursday’s 3 grid cancellations are included in the headline total of 9. Named recurring memberships ending Thursday — Dean Guest, Cleo Parker and Jess Climan — are included in the operating total of 11. Kickstarter/trial endings, expired class passes, deposits, casual sessions and part payments are excluded from operating churn.</p>')}
+]) + '<p class="sub">Thursday’s 3 grid cancellations are included in the headline total of 9. Dean Guest, Cleo Parker and Jess Climan are included in the nine counted named records. Short Term memberships, Kickstarter/trial endings, expired class passes, deposits, casual sessions and part payments are excluded from cancellations.</p>')}
 
 ${section('Rollover outcomes — 3 resolved, 1 eligible', 'Outcome week follows Rolled Over Date (NMS column P). Rate = Rolled Over ÷ (Rolled Over + NO); Straight to Membership, Not Rolled Over and Short Term are outside this denominator.', table(['Member','Outcome','Outcome date','Rate treatment'],d.outcomes.map(o=>[o.name,o.status,o.date,o.status==='NO'?'Included in eligible denominator':'Excluded from eligible denominator'])) + '<p class="sub">0 ÷ (0 + 1) = 0.0%, against the existing 80% target. This is one eligible resolved outcome so far, not a final weekly conversion rate. Jeffrey’s NMS outcome is dated 19 October while his cancellation record ends 22 October; use each date for its own metric.</p>')}
 
@@ -74,10 +76,10 @@ ${section('Rollover pipeline — 3 unresolved decisions this week', 'Effective d
 ${section('Sales and deposits — 5 intro records, 1 membership record', 'Date Sold (NMS column S) controls this table. Daily Numbers also records 5 intros: 3 phone, 1 walk-in and 1 other. Deposits are recorded amounts, not full contract revenue or verified cash received.', table(['Member','Date sold','Record type','Deposit','Verification'],d.sales.map(s=>[s.name,s.sold,s.type,s.deposit===null?'Missing':money(s.deposit),s.name==='Alek Lacey'?'STM status; Cancelled Member; no outcome date':s.deposit===null?'Confirm and enter deposit':'Recorded'])) + '<p class="sub">* $1,000 is the sum of the five populated deposit cells across six sale records, including Alek’s $40 part payment. Kim Scharnitzky’s deposit is blank, not zero. Alek is not counted as a confirmed direct join: the master says Straight to Membership but also Cancelled Member, has no start/outcome date, and the raw dump shows only an expired part payment. Verify activation before counting the join.</p>')}
 
 ${section('Previous completed week — 9–15 October', 'Both columns cover Friday–Thursday weeks. Current-week figures include Thursday entries already recorded but remain provisional as of Wednesday 21 October.', table(['Metric','16–22 Oct · provisional','9–15 Oct · full week'],[
-['Grid cancellations','9','14'],['Operating cancellations','11','5 (after the prior-week adjustments)'],['Rollovers / confirmed STM','0 / 0','5 / 3'],['Grid movement','−9','−6'],['Operating movement','−11','+3'],['Intro sales / NMS sale records','5 / 6','10 / 13'],['Recorded deposits','$1,000; 1 blank','$1,179'],['Rollover rate · current NMS snapshot','0/1 = 0.0%','5/12 = 41.7%']
-]) + '<p class="sub">Prior-period rate restated from the current NMS snapshot: Caden is now NO dated 14 October, bringing that period to 5 rollovers and 7 NO outcomes. The archived 16 October report showed 5/11 = 45.5% before this status change. The previous operating cancellation count and bad-debt adjustments are retained from that archived reconciliation.</p><p><a href="reports/2026-10-09-to-15.html">View the preserved previous-week report</a></p>')}
+['Grid cancellations','9','14'],['Counted cancellations','9','4 (restated: excludes Short Term)'],['Rollovers / confirmed STM','0 / 0','5 / 3'],['Grid movement','−9','−6'],['Movement after exclusions','−9','+4 (restated)'],['Intro sales / NMS sale records','5 / 6','10 / 13'],['Recorded deposits','$1,000; 1 blank','$1,179'],['Rollover rate · current NMS snapshot','0/1 = 0.0%','5/12 = 41.7%']
+]) + '<p class="sub">Prior-period cancellations are restated under the clarified Short Term exclusion: the archived count of 5 included Ari Miles (Short Term Unlimited), so the comparable count is 4 and movement is 5 + 3 − 4 = +4. The nine bad-debt exclusions remain applied to that prior week. Prior-period rate is restated from the current NMS snapshot: Caden is now NO dated 14 October, bringing that period to 5 rollovers and 7 NO outcomes (41.7%). The archived report remains unchanged and shows the earlier figures.</p><p><a href="reports/2026-10-09-to-15.html">View the preserved previous-week report</a></p>')}
 
-<section class="caution reconcile"><div class="caution-head"><div><h3>Follow-up before the final weekly close</h3><p>Reconcile the 9 grid cancellations with the 11 named autopay endings; verify Alek’s membership activation; fill Kim’s deposit; close the 3 outstanding rollover decisions.</p></div></div><p class="caution-detail">Autopay member totals, full-gym attendance, equipment sales and counter fees have not been verified from these sources. The full-week date range includes Thursday entries already recorded. Figures remain provisional until the week is complete.</p></section>
+<section class="caution reconcile"><div class="caution-head"><div><h3>Follow-up before the final weekly close</h3><p>Verify Alek’s membership activation; fill Kim’s deposit; close the 3 outstanding rollover decisions. Cancellation counts now reconcile at 9 after excluding Short Term memberships.</p></div></div><p class="caution-detail">Autopay member totals, full-gym attendance, equipment sales and counter fees have not been verified from these sources. The full-week date range includes Thursday entries already recorded. Figures remain provisional until the week is complete.</p></section>
 <footer class="footer">Urban Muaythai · Weekly Numbers · 16–22 October 2026 · Sources read 21 October 2026<br>
 <a href="${esc(d.sources.daily)}">Daily Numbers grid</a> · <a href="${esc(d.sources.cancellations)}">Cancellation Raw Dump</a> · <a href="${esc(d.sources.nms)}">NMS Kickstarter Master</a> · <a href="data/2026-10-16-to-22.json">Reviewed data snapshot</a>
 </footer></main></body></html>\n`;
