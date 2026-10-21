@@ -1,0 +1,344 @@
+{
+  "period": {
+    "start": "2026-10-16",
+    "cutoff": "2026-10-22",
+    "end": "2026-10-22",
+    "timezone": "Australia/Brisbane",
+    "status": "Full-week entries, provisional; read 21 October before the reporting week ends"
+  },
+  "sources": {
+    "daily": "https://docs.google.com/spreadsheets/d/1sqS2xjIz03pmcEqY2WEoK-jrrqveNF0-UNvAaXbOhRg/edit#gid=128889242",
+    "nms": "https://docs.google.com/spreadsheets/d/1RzZW1fI-7QRkiDHNBWkOJpbeDZ6GsFl7LrfM2uJP5Lc/edit#gid=1830289556",
+    "cancellations": "https://docs.google.com/spreadsheets/d/1sqS2xjIz03pmcEqY2WEoK-jrrqveNF0-UNvAaXbOhRg/edit#gid=2024648094",
+    "readDate": "2026-10-21"
+  },
+  "daily": {
+    "intro": 5,
+    "phone": 3,
+    "walkIn": 1,
+    "other": 1,
+    "rollovers": 0,
+    "straightToMembership": 0,
+    "cancellations": 9,
+    "adultCancellations": 6,
+    "kidsCancellations": 2,
+    "net": -9,
+    "teensCancellations": 1,
+    "thursdayCancellationsIncluded": 3
+  },
+  "operatingCancellations": [
+    {
+      "name": "Ricky Nogueira De Sa",
+      "membership": "Accelerate WEEKLY 6 month membership",
+      "end": "2026-10-16",
+      "recurring": "61.2",
+      "type": "Cancelled",
+      "reason": "Moving to sunny coast"
+    },
+    {
+      "name": "Dean Guest",
+      "membership": "15-18 years (3x per week) 2023",
+      "end": "2026-10-22",
+      "recurring": "44",
+      "type": "Cancelled",
+      "reason": "Too busy currently"
+    },
+    {
+      "name": "Cleo Parker",
+      "membership": "Kids 7-10 years ( 2 x classes)",
+      "end": "2026-10-22",
+      "recurring": "34",
+      "type": "Cancelled",
+      "reason": "Not doing chores around the house so doesnt get to do muaythai"
+    },
+    {
+      "name": "Angus Nowlan",
+      "membership": "Short Term Membership Unlimited",
+      "end": "2026-10-19",
+      "recurring": "66.3",
+      "type": "Cancelled",
+      "reason": "Work Commitments"
+    },
+    {
+      "name": "Giselle Brownlee-Smith.",
+      "membership": "Accelerate  WEEKLY 6 month membership",
+      "end": "2026-10-20",
+      "recurring": "65",
+      "type": "Cancelled",
+      "reason": "Not using, see notes"
+    },
+    {
+      "name": "Inigo lopez",
+      "membership": "Accelerate  WEEKLY 6 month membership",
+      "end": "2026-10-20",
+      "recurring": "65",
+      "type": "Cancelled",
+      "reason": "has to save 30k for visa"
+    },
+    {
+      "name": "James Keegan",
+      "membership": "Accelerate  WEEKLY 6 month membership",
+      "end": "2026-10-21",
+      "recurring": "61.2",
+      "type": "Cancelled",
+      "reason": "Moved to the other side of the gc"
+    },
+    {
+      "name": "Julia Cielecka",
+      "membership": "Short Term Membership Unlimited",
+      "end": "2026-10-21",
+      "recurring": "70",
+      "type": "Cancelled",
+      "reason": "Personal"
+    },
+    {
+      "name": "Jess Climan.",
+      "membership": "Accelerate  WEEKLY 6 month membership",
+      "end": "2026-10-22",
+      "recurring": "61.2",
+      "type": "Cancelled",
+      "reason": "Pregnant"
+    },
+    {
+      "name": "Cooper Harkness.",
+      "membership": "Fun & Fitness (3 classes per week) Weekly T6",
+      "end": "2026-10-19",
+      "recurring": "51.5",
+      "type": "Cancelled",
+      "reason": "Moving to sunshine coast"
+    },
+    {
+      "name": "Rocco Middleton",
+      "membership": "Kids 7-10 years ( 2 x classes)",
+      "end": "2026-10-19",
+      "recurring": "37",
+      "type": "Cancelled",
+      "reason": "Didnt like it"
+    }
+  ],
+  "excludedIntroEndings": [
+    {
+      "name": "Sam Noble",
+      "membership": "Kickstarter Program Upfront",
+      "end": "2026-10-19",
+      "recurring": "60",
+      "type": "Cancelled",
+      "reason": "NRO"
+    },
+    {
+      "name": "Caden Seidel.",
+      "membership": "Kickstarter Program Upfront",
+      "end": "2026-10-19",
+      "recurring": "60",
+      "type": "Cancelled",
+      "reason": "Waiting for short term waiver, conversing through email"
+    },
+    {
+      "name": "Siebe Claessens",
+      "membership": "Kickstarter Program Weekly",
+      "end": "2026-10-22",
+      "recurring": "60",
+      "type": "Cancelled",
+      "reason": "NRO"
+    },
+    {
+      "name": "Jeffrey Caussimon",
+      "membership": "Kickstarter Program Upfront",
+      "end": "2026-10-22",
+      "recurring": "60",
+      "type": "Cancelled",
+      "reason": "NRO"
+    },
+    {
+      "name": "Mackenzie Constantino",
+      "membership": "Teens 1 Week Trial",
+      "end": "2026-10-19",
+      "recurring": "0",
+      "type": "Expired",
+      "reason": "Membership Expired"
+    }
+  ],
+  "sales": [
+    {
+      "name": "Michael Karlovic.",
+      "type": "KS 28 days",
+      "sold": "16/10/26",
+      "status": "",
+      "membership": "Kickstarter Program Upfront",
+      "deposit": 240,
+      "outcomeDate": null
+    },
+    {
+      "name": "aiden williamson",
+      "type": "KS 28 days",
+      "sold": "19/10/26",
+      "status": "",
+      "membership": "Kickstarter Program Upfront",
+      "deposit": 240,
+      "outcomeDate": null
+    },
+    {
+      "name": "Alek Lacey",
+      "type": "Membership",
+      "sold": "19/10/26",
+      "status": "Straight to Membership",
+      "membership": "Cancelled Member",
+      "deposit": 40,
+      "outcomeDate": null
+    },
+    {
+      "name": "Matthew Dundee",
+      "type": "KS 28 days",
+      "sold": "20/10/26",
+      "status": "",
+      "membership": "Kickstarter Program Upfront",
+      "deposit": 240,
+      "outcomeDate": null
+    },
+    {
+      "name": "Tristan Lauder",
+      "type": "KS 28 days",
+      "sold": "20/10/26",
+      "status": "",
+      "membership": "Kickstarter Program Upfront",
+      "deposit": 240,
+      "outcomeDate": null
+    },
+    {
+      "name": "Kim Scharnitzky",
+      "type": "KS 28 days",
+      "sold": "20/10/26",
+      "status": "",
+      "membership": "Kickstarter Program Upfront",
+      "deposit": null,
+      "outcomeDate": null
+    }
+  ],
+  "outcomes": [
+    {
+      "name": "Jeffrey Caussimon",
+      "status": "Not Rolled Over",
+      "date": "19/10/26",
+      "type": "KS 28 days"
+    },
+    {
+      "name": "Sean Forster.",
+      "status": "Short Term",
+      "date": "20/10/26",
+      "type": "KS 28 days"
+    },
+    {
+      "name": "Sam Noble",
+      "status": "NO",
+      "date": "19/10/26",
+      "type": "KS 28 days"
+    }
+  ],
+  "pipeline": [
+    {
+      "name": "Phoenix Muller.",
+      "status": "Waiting",
+      "due": "6/10/26",
+      "extended": "11/2/2026",
+      "visits": [
+        "3",
+        "5",
+        "3",
+        "4"
+      ],
+      "membership": "Kickstarter Program Upfront",
+      "note": ""
+    },
+    {
+      "name": "Jimmy Wreghitt.",
+      "status": "Unresolved",
+      "due": "7/10/26",
+      "extended": "10/21/2026",
+      "visits": [
+        "2",
+        "3",
+        "2",
+        "3"
+      ],
+      "membership": "Kickstarter Program Weekly",
+      "note": ""
+    },
+    {
+      "name": "Dale Cleary",
+      "status": "Unresolved",
+      "due": "8/10/26",
+      "extended": "11/5/2026",
+      "visits": [
+        "3",
+        "1",
+        "3",
+        "0"
+      ],
+      "membership": "Kickstarter Program Upfront",
+      "note": ""
+    },
+    {
+      "name": "Pheline Rosin",
+      "status": "Extended",
+      "due": "20/10/26",
+      "extended": "11/3/2026",
+      "visits": [
+        "6",
+        "6",
+        null,
+        null
+      ],
+      "membership": "Kickstarter Program Upfront",
+      "note": ""
+    },
+    {
+      "name": "Lukas nazal.",
+      "status": "Unresolved",
+      "due": "20/10/26",
+      "extended": null,
+      "visits": [
+        "3",
+        "3",
+        "3",
+        "2"
+      ],
+      "membership": "Kickstarter Program Weekly",
+      "note": ""
+    },
+    {
+      "name": "Mackenzie Constantino",
+      "status": "Pending Waiver",
+      "due": "20/10/26",
+      "extended": null,
+      "visits": [
+        "3",
+        "0",
+        "0",
+        "0"
+      ],
+      "membership": "Cancelled Member",
+      "note": ""
+    }
+  ],
+  "rate": {
+    "rolled": 0,
+    "no": 1,
+    "eligible": 1,
+    "percent": 0,
+    "target": 80
+  },
+  "prior": {
+    "period": "9–15 October 2026 · full week",
+    "gridCancellations": 14,
+    "operatingCancellations": 5,
+    "rollovers": 5,
+    "straightToMembership": 3,
+    "intro": 10,
+    "saleRecords": 13,
+    "deposits": 1179,
+    "adjustedNet": 3,
+    "badDebtsExcluded": 9,
+    "nmsRate": "5/12 = 41.7% (current NMS snapshot)",
+    "note": "Archived 16 October report showed 5/11 = 45.5%; NMS now classifies Caden as NO, so current snapshot has 12 eligible. Historical archive retained."
+  }
+}
