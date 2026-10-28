@@ -4,7 +4,7 @@
     "cutoff": "2026-10-29",
     "end": "2026-10-29",
     "timezone": "Australia/Brisbane",
-    "status": "Midweek, provisional; read Wednesday 28 October after the Daily Numbers Full Sync (11:15am)"
+    "status": "Midweek, provisional; read Wednesday 28 October after the Daily Numbers Full Sync (re-run after Rolled Over Dates were filled)"
   },
   "sources": {
     "daily": "https://docs.google.com/spreadsheets/d/1sqS2xjIz03pmcEqY2WEoK-jrrqveNF0-UNvAaXbOhRg/edit#gid=128889242",
@@ -14,9 +14,9 @@
   },
   "daily": {
     "week": 26,
-    "rollovers": 2,
+    "rollovers": 3,
     "rolloversKids": 1,
-    "rolloversKs": 1,
+    "rolloversKs": 2,
     "intro": 5,
     "phone": 1,
     "walkIn": 3,
@@ -27,57 +27,235 @@
     "adultCancellations": 2,
     "teensCancellations": 0,
     "kidsCancellations": 0,
-    "net": 1
+    "net": 2
   },
   "operatingCancellations": [
-    {"name": "Vitoria Damasceno", "membership": "Accelerate WEEKLY 6 month membership", "end": "2026-10-28", "recurring": "65", "type": "Cancelled", "reason": "Cancellation Form signed 21 Oct, 7 day notice (out of agreement), no reason given"},
-    {"name": "Noemi Lopez", "membership": "Fun & Fitness (3 classes per week) Weekly T6", "end": "2026-10-29", "recurring": "51", "type": "Cancelled", "reason": "Too easy"}
+    {
+      "name": "Vitoria Damasceno",
+      "membership": "Accelerate WEEKLY 6 month membership",
+      "end": "2026-10-28",
+      "recurring": "65",
+      "type": "Cancelled",
+      "reason": "Cancellation Form signed 21 Oct, 7 day notice (out of agreement), no reason given"
+    },
+    {
+      "name": "Noemi Lopez",
+      "membership": "Fun & Fitness (3 classes per week) Weekly T6",
+      "end": "2026-10-29",
+      "recurring": "51",
+      "type": "Cancelled",
+      "reason": "Too easy"
+    }
   ],
   "excluded": [
-    {"name": "Lawrence Deffense.", "membership": "Kickstarter Program Weekly", "end": "2026-10-27", "why": "Kickstarter ending (goodwill week 7–12 Dec agreed), not an autopay cancellation"},
-    {"name": "Dylan Vicario", "membership": "15-18 years Kickstarter Program", "end": "2026-10-27", "why": "Kickstarter expired because he rolled over onto 15-18 (3x per week)"},
-    {"name": "Casual sessions + deposits", "membership": "Kyl Juler, Ava Dusan-Muir, Tiana Wood, Peppy Cheng, Owen Hsiao casuals; Samantha + Trent deposits", "end": "23–26 Oct", "why": "One-off products, never counted"}
+    {
+      "name": "Lawrence Deffense.",
+      "membership": "Kickstarter Program Weekly",
+      "end": "2026-10-27",
+      "why": "Kickstarter ending (goodwill week 7–12 Dec agreed), not an autopay cancellation"
+    },
+    {
+      "name": "Dylan Vicario",
+      "membership": "15-18 years Kickstarter Program",
+      "end": "2026-10-27",
+      "why": "Kickstarter expired because he rolled over onto 15-18 (3x per week)"
+    },
+    {
+      "name": "Casual sessions + deposits",
+      "membership": "Kyl Juler, Ava Dusan-Muir, Tiana Wood, Peppy Cheng, Owen Hsiao casuals; Samantha + Trent deposits",
+      "end": "23–26 Oct",
+      "why": "One-off products, never counted"
+    }
   ],
   "sales": [
-    {"name": "Samantha France.", "type": "KS 28 days", "source": "Phone", "sold": "2026-10-23", "deposit": 65, "note": "Kickstarter Weekly deposit"},
-    {"name": "Remy Martinot", "type": "1 Week Trial", "source": "Walk-in", "sold": "2026-10-26", "deposit": 99, "note": "Teens 1 Week Trial"},
-    {"name": "William Cuddon", "type": "Membership", "source": "Walk-in", "sold": "2026-10-26", "deposit": 50, "note": "Straight to Teens Unlimited (desk part payment)"},
-    {"name": "Aston Schulz.", "type": "KS 28 days", "source": "Walk-in", "sold": "2026-10-26", "deposit": 240, "note": "15-18 Kickstarter Upfront"},
-    {"name": "Trent Smith", "type": "KS 28 days", "source": "Walk-in", "sold": "2026-10-26", "deposit": 65, "note": "Kickstarter Weekly deposit (ex-member 2017)"},
-    {"name": "Francesc Risco", "type": "KS 28 days", "source": "Not recorded", "sold": "2026-10-27", "deposit": 240, "note": "$40 casual + $200 KS deposit; KS not set up yet, not in Slack"}
+    {
+      "name": "Samantha France.",
+      "type": "KS 28 days",
+      "source": "Phone",
+      "sold": "2026-10-23",
+      "deposit": 65,
+      "note": "Kickstarter Weekly deposit"
+    },
+    {
+      "name": "Remy Martinot",
+      "type": "1 Week Trial",
+      "source": "Walk-in",
+      "sold": "2026-10-26",
+      "deposit": 99,
+      "note": "Teens 1 Week Trial"
+    },
+    {
+      "name": "William Cuddon",
+      "type": "Membership",
+      "source": "Walk-in",
+      "sold": "2026-10-26",
+      "deposit": 50,
+      "note": "Straight to Teens Unlimited (desk part payment)"
+    },
+    {
+      "name": "Aston Schulz.",
+      "type": "KS 28 days",
+      "source": "Walk-in",
+      "sold": "2026-10-26",
+      "deposit": 240,
+      "note": "15-18 Kickstarter Upfront"
+    },
+    {
+      "name": "Trent Smith",
+      "type": "KS 28 days",
+      "source": "Walk-in",
+      "sold": "2026-10-26",
+      "deposit": 65,
+      "note": "Kickstarter Weekly deposit (ex-member 2017)"
+    },
+    {
+      "name": "Francesc Risco",
+      "type": "KS 28 days",
+      "source": "Not recorded",
+      "sold": "2026-10-27",
+      "deposit": 240,
+      "note": "$40 casual + $200 KS deposit; KS not set up yet, not in Slack"
+    }
   ],
   "outcomes": [
-    {"name": "Dylan Vicario", "status": "Rolled Over", "date": "2026-10-26", "type": "KS 28 days", "to": "15-18 years (3x per week)"},
-    {"name": "Mackenzie Constantino", "status": "Rolled Over", "date": "2026-10-27", "type": "1 Week Trial", "to": "Teens Class (2x classes)"},
-    {"name": "William Cuddon", "status": "Straight to Membership", "date": "2026-10-26", "type": "Membership", "to": "Teens Class (unlimited)"}
+    {
+      "name": "Annabel Solvik",
+      "status": "Rolled Over",
+      "date": "2026-10-23",
+      "type": "KS 28 days",
+      "to": "Fun & Fitness (3 classes per week) Weekly T6"
+    },
+    {
+      "name": "Dylan Vicario",
+      "status": "Rolled Over",
+      "date": "2026-10-26",
+      "type": "KS 28 days",
+      "to": "15-18 years (3x per week)"
+    },
+    {
+      "name": "William Cuddon",
+      "status": "Straight to Membership",
+      "date": "2026-10-26",
+      "type": "Membership",
+      "to": "Teens Class (unlimited)"
+    },
+    {
+      "name": "Mereoni Robbins",
+      "status": "Not Rolled Over",
+      "date": "2026-10-26",
+      "type": "KS 28 days",
+      "to": "Kickstarter ended (calf injury) – free restart offered"
+    },
+    {
+      "name": "Mackenzie Constantino",
+      "status": "Rolled Over",
+      "date": "2026-10-27",
+      "type": "1 Week Trial",
+      "to": "Teens Class (2x classes)"
+    }
   ],
-  "rate": {"rolled": 2, "no": 0, "eligible": 2, "percent": 100, "target": 80},
+  "rate": {
+    "rolled": 3,
+    "no": 0,
+    "eligible": 3,
+    "percent": 100,
+    "target": 80
+  },
   "pipeline": [
-    {"name": "Jimmy Wreghitt.", "due": "2026-10-21", "state": "Overdue", "status": "Blank – still on KS Weekly $60/wk", "visits": "2 + 3 + 2 + 3", "action": "Jakob to have the roll-over chat at the desk (trained 27 Oct)"},
-    {"name": "Annabel Solvik", "due": "2026-10-24", "state": "Status set, date missing", "status": "Rolled Over – no Rolled Over Date (P)", "visits": "4 + 3 + 0 + 3", "action": "Fill P = her F&F membership start; she then counts as a rollover"},
-    {"name": "Sebastian Wojtkiewicz", "due": "2026-10-26", "state": "Overdue", "status": "Blank", "visits": "2 + 1 + 3 + 4", "action": "Confirm roll-over decision and record status/date"},
-    {"name": "Mereoni Robbins", "due": "2026-10-26", "state": "Status set, date missing", "status": "Not Rolled Over – no P", "visits": "3 + 1 + 0 + 0", "action": "Fill P = 26/10 (due date rule); outside the rate either way"}
+    {
+      "name": "Jimmy Wreghitt.",
+      "due": "2026-10-21",
+      "state": "Overdue",
+      "status": "Blank – still on KS Weekly $60/wk",
+      "visits": "2 + 3 + 2 + 3",
+      "action": "Jakob to have the roll-over chat at the desk (trained 27 Oct)"
+    },
+    {
+      "name": "Sebastian Wojtkiewicz",
+      "due": "2026-10-26",
+      "state": "Overdue",
+      "status": "Blank",
+      "visits": "2 + 1 + 3 + 4",
+      "action": "Confirm roll-over decision and record status/date"
+    }
   ],
   "lookAhead": {
     "period": "Fri 30 Oct – Thu 5 Nov",
     "rolloversDue": [
-      {"name": "Remy Martinot", "due": "Mon 2 Nov", "note": "Teens trial – Jakob roll-over chat with parent"},
-      {"name": "Phoenix Muller.", "due": "Mon 2 Nov", "note": "Waiting (extended)"},
-      {"name": "Pheline Rosin", "due": "Tue 3 Nov", "note": "Extended"},
-      {"name": "Jed Meadowcroft", "due": "Wed 4 Nov", "note": "15-18 KS – Jakob task due 30 Oct"},
-      {"name": "Edana Marshall", "due": "Thu 5 Nov", "note": ""},
-      {"name": "Val Torrisi.", "due": "Thu 5 Nov", "note": ""},
-      {"name": "Jonathan Lindal.", "due": "Thu 5 Nov", "note": ""},
-      {"name": "Dale Cleary", "due": "Thu 5 Nov", "note": "8-week FIFO Kickstarter"}
+      {
+        "name": "Remy Martinot",
+        "due": "Mon 2 Nov",
+        "note": "Teens trial – Jakob roll-over chat with parent"
+      },
+      {
+        "name": "Phoenix Muller.",
+        "due": "Mon 2 Nov",
+        "note": "Waiting (extended)"
+      },
+      {
+        "name": "Pheline Rosin",
+        "due": "Tue 3 Nov",
+        "note": "Extended"
+      },
+      {
+        "name": "Jed Meadowcroft",
+        "due": "Wed 4 Nov",
+        "note": "15-18 KS – Jakob task due 30 Oct"
+      },
+      {
+        "name": "Edana Marshall",
+        "due": "Thu 5 Nov",
+        "note": ""
+      },
+      {
+        "name": "Val Torrisi.",
+        "due": "Thu 5 Nov",
+        "note": ""
+      },
+      {
+        "name": "Jonathan Lindal.",
+        "due": "Thu 5 Nov",
+        "note": ""
+      },
+      {
+        "name": "Dale Cleary",
+        "due": "Thu 5 Nov",
+        "note": "8-week FIFO Kickstarter"
+      }
     ],
     "cancellations": [
-      {"name": "Alex Eum", "end": "Fri 30 Oct", "membership": "Kids 7-10 (2x)", "reason": "Stuck overseas"},
-      {"name": "Alec Savins", "end": "Mon 2 Nov", "membership": "Teens Class (2x)", "reason": "More days at swimming"},
-      {"name": "Lincoln Gagie", "end": "Mon 2 Nov", "membership": "Teens Class (unlimited)", "reason": "Can't afford it right now"},
-      {"name": "James Belding", "end": "Thu 5 Nov", "membership": "Fun & Fitness 3x T6", "reason": "Schedule too busy – in agreement, $535.50 fee"}
+      {
+        "name": "Alex Eum",
+        "end": "Fri 30 Oct",
+        "membership": "Kids 7-10 (2x)",
+        "reason": "Stuck overseas"
+      },
+      {
+        "name": "Alec Savins",
+        "end": "Mon 2 Nov",
+        "membership": "Teens Class (2x)",
+        "reason": "More days at swimming"
+      },
+      {
+        "name": "Lincoln Gagie",
+        "end": "Mon 2 Nov",
+        "membership": "Teens Class (unlimited)",
+        "reason": "Can't afford it right now"
+      },
+      {
+        "name": "James Belding",
+        "end": "Thu 5 Nov",
+        "membership": "Fun & Fitness 3x T6",
+        "reason": "Schedule too busy – in agreement, $535.50 fee"
+      }
     ],
     "excludedCancellations": [
-      {"name": "Harry Butler", "end": "Tue 3 Nov", "membership": "Short Term Unlimited", "reason": "Moving to NZ / UK – Short Term not counted"}
+      {
+        "name": "Harry Butler",
+        "end": "Tue 3 Nov",
+        "membership": "Short Term Unlimited",
+        "reason": "Moving to NZ / UK – Short Term not counted"
+      }
     ]
   },
   "prior": {

@@ -49,12 +49,12 @@ ${qa('How many cancellations are recorded?', `${count} counted · matches Daily 
 ${qa('How many rollovers and direct joins are confirmed?', `${rolled} rollovers · ${stm} straight to membership`)}
 ${qa('Growth, loss or neutral?', `Net movement: ${signed(net)}`, net >= 0 ? 'green' : 'red')}
 ${qa('Rollover rate against the 80% target?', `${d.rate.percent}% — ${rolled} of ${d.rate.eligible} eligible outcomes`, 'green')}
-${qa('Which rollover decisions need attention?', `${d.pipeline.length} items · 2 overdue, 2 missing dates`, 'gold')}
+${qa('Which rollover decisions need attention?', `${d.pipeline.length} overdue decisions`, 'gold')}
 ${qa('How many sales and deposits are recorded?', `${intro} intro · ${d.sales.length} sale records · ${money(total)}`)}
 </div></section>
 <div class="cards">
 ${card('Daily Numbers cancellations', count, `${d.daily.adultCancellations} adults · ${d.daily.teensCancellations} teens · ${d.daily.kidsCancellations} kids`, 'gold')}
-${card('Rollovers', rolled, 'Dylan (KS) · Mackenzie (trial)', 'green')}
+${card('Rollovers', rolled, 'Annabel · Dylan (KS) · Mackenzie (trial)', 'green')}
 ${card('Straight to membership', stm, 'William Cuddon (Teens)', 'green')}
 ${card('Net movement', signed(net), `${rolled} RO + ${stm} STM − ${count} cancels`, net >= 0 ? 'green' : 'red')}
 ${card('Rollover rate', d.rate.percent + '%', `${rolled} of ${d.rate.eligible} · target ${d.rate.target}%`, 'green')}
@@ -67,7 +67,7 @@ ${section('Excluded endings — not counted as cancellations', 'These end inside
 
 ${section(`Rollover outcomes — ${d.outcomes.length} resolved`, 'Outcome week follows Rolled Over Date (NMS column P). Rate = Rolled Over ÷ (Rolled Over + NO); Straight to Membership, Not Rolled Over and Short Term sit outside the denominator.', table(['Member','Outcome','Date','From','Now on'], d.outcomes.map(o=>[o.name, o.status, day(o.date), o.type, o.to])) + `<p class="sub">${rolled} ÷ (${rolled} + ${no}) = ${d.rate.percent}% against the 80% target. Daily Numbers files Mackenzie's teens trial roll-over under the “Kids 1 Wk Trial” column; the total is unaffected.</p>`)}
 
-${section(`Rollover pipeline — ${d.pipeline.length} items to close`, 'Decisions due this week (or overdue) that are not finished in the NMS Master. Two have a status but no Rolled Over Date, so the reports and Daily Numbers do not count them yet.', table(['Member','Due','State','Status / attendance','Next action'], d.pipeline.map(x=>[x.name, day(x.due), x.state, `${x.status} · ${x.visits}`, x.action])) + '<p class="sub">If Annabel’s date is filled inside this week she adds a rollover: 3 of 3 eligible, net +2.</p>')}
+${section(`Rollover pipeline — ${d.pipeline.length} overdue decisions`, 'Decisions due this week (or overdue) with no roll-over status in the NMS Master yet.', table(['Member','Due','State','Status / attendance','Next action'], d.pipeline.map(x=>[x.name, day(x.due), x.state, `${x.status} · ${x.visits}`, x.action])) + '<p class="sub">Annabel Solvik (Rolled Over, 23 Oct) and Mereoni Robbins (Not Rolled Over, 26 Oct) had their Rolled Over Dates filled on 28 Oct and are now counted above.</p>')}
 
 ${section(`Sales and deposits — ${intro} intro sales, ${d.sales.length} records`, 'Date Sold (NMS column S) controls this table. Daily Numbers records the same 5 intros: 1 phone, 3 walk-in and 1 with no source yet (Francesc). Deposits are recorded amounts, not full contract value.', table(['Member','Date sold','Type','Source','Deposit','Note'], d.sales.map(s=>[s.name, day(s.sold), s.type, s.source, money(s.deposit), s.note])) + `<p class="sub">Total recorded deposits ${money(total)} including William’s $50 straight-to-membership part payment.</p>`)}
 
@@ -81,7 +81,7 @@ ${section('Previous week — Fri 16 – Thu 22 October (closed)', p.note, table(
 ['Rollover rate', `${rolled}/${d.rate.eligible} = ${d.rate.percent}%`, p.rate]
 ]) + '<p><a href="reports/2026-10-16-to-22.html">View the 16–22 October midweek page as published</a> · <a href="reports/2026-10-09-to-15.html">9–15 October</a></p>')}
 
-<section class="caution reconcile"><div class="caution-head"><div><h3>Before Friday's final close</h3><p>Fill Annabel Solvik's and Mereoni Robbins' Rolled Over Dates; get roll-over decisions for Jimmy Wreghitt and Sebastian Wojtkiewicz; record Francesc's intro source and set up his Kickstarter.</p></div></div><p class="caution-detail">Thursday 29 October is included where already recorded (Noemi Lopez). Autopay roster totals, attendance, equipment sales and counter fees are not part of this page.</p></section>
+<section class="caution reconcile"><div class="caution-head"><div><h3>Before Friday's final close</h3><p>Get roll-over decisions for Jimmy Wreghitt and Sebastian Wojtkiewicz; record Francesc's intro source and set up his Kickstarter.</p></div></div><p class="caution-detail">Thursday 29 October is included where already recorded (Noemi Lopez). Autopay roster totals, attendance, equipment sales and counter fees are not part of this page.</p></section>
 <footer class="footer">Urban Muaythai · Weekly Numbers · 23–29 October 2026 · Synced with Daily Numbers 28 October 2026<br>
 <a href="${esc(d.sources.daily)}">Daily Numbers grid</a> · <a href="${esc(d.sources.cancellations)}">Cancellation Raw Dump</a> · <a href="${esc(d.sources.nms)}">NMS Kickstarter Master</a> · <a href="data/2026-10-23-to-29.json">Reviewed data snapshot</a>
 </footer></main></body></html>\n`;
