@@ -42,7 +42,9 @@ const html = `<!doctype html>
 <style>${css}\n.pipeline h3{margin:0 0 7px;font-size:17px}.pipeline .intro{font-size:12px}a{color:var(--blue)}.reconcile{border-color:#7a4400;background:#1b1308}.sub,.intro,.label,th,.footer{color:#aaa}.footer a{display:inline-block;margin:4px 6px}.card .value{overflow-wrap:anywhere}.table+.table{margin-top:12px}</style></head>
 <body><main class="wrap">
 <header class="header"><div class="logo">UM</div><div><h1>Weekly Numbers — Midweek</h1><p>Urban Muaythai · Miami · Friday–Thursday reporting period</p></div></header>
-<div class="period"><div><h2>Fri 23 Oct – Thu 29 Oct 2026</h2><p>Week 26 · includes Thursday 29 October cancellations already recorded</p><span class="currentflag">Provisional · week not yet closed</span></div><div class="asof">Synced with Daily Numbers<br>Wed 28 October 2026 · Brisbane</div></div>
+<div class="period"><div><h2>Fri 23 Oct – Thu 29 Oct 2026</h2><p>Week 26 · includes Thursday 29 October cancellations already recorded</p><span class="currentflag">Provisional · week not yet closed</span></div><div class="asof">Synced with Daily Numbers<br>Wed 28 October 2026 · 12:30pm Brisbane</div></div>
+
+<section class="qa"><h3>The headline</h3><p>A growth week so far. ${rolled} rollovers and ${stm} straight-to-membership against ${count} autopay cancellations, so we're at ${signed(net)} on autopay. Still provisional until the week closes on Thursday.</p></section>
 
 <section class="qa"><h3>Weekly management answers</h3><p class="intro">Every figure below matches the Daily Numbers grid for Week 26 after today's Full Sync. Cancellations count autopay memberships only — Kickstarter, trial and Short Term endings, casuals and deposits are excluded.</p><div class="qa-list">
 ${qa('How many cancellations are recorded?', `${count} counted · matches Daily Numbers`, 'gold')}
