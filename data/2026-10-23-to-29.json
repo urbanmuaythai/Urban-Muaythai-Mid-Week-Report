@@ -17,8 +17,8 @@
     "rollovers": 3,
     "rolloversKids": 1,
     "rolloversKs": 2,
-    "intro": 5,
-    "phone": 1,
+    "intro": 6,
+    "phone": 2,
     "walkIn": 3,
     "referral": 0,
     "other": 1,
@@ -115,6 +115,14 @@
       "sold": "2026-10-27",
       "deposit": 240,
       "note": "$40 casual + $200 KS deposit; KS not set up yet, not in Slack"
+    },
+    {
+      "name": "Valentino Addevico",
+      "type": "KS 28 days",
+      "source": "Phone",
+      "sold": "2026-10-28",
+      "deposit": 65,
+      "note": "Kickstarter Weekly, starts Mon 2 Nov 6pm (first $65 due 28 Oct)"
     }
   ],
   "outcomes": [

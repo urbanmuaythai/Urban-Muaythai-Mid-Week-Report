@@ -27,7 +27,7 @@ assert.equal(stm, d.daily.straightToMembership);
 assert.equal(rolled, d.rate.rolled);
 assert.equal(no, d.rate.no);
 assert.equal(net, d.daily.net);
-assert.equal(total, 759);
+assert.equal(total, 824);
 
 const table = (heads, rows) => `<div class="table"><table><thead><tr>${heads.map(h=>`<th>${esc(h)}</th>`).join('')}</tr></thead><tbody>${rows.map(r=>`<tr>${r.map(c=>`<td>${esc(c)}</td>`).join('')}</tr>`).join('\n')}</tbody></table></div>`;
 const section = (title, intro, content) => `<section class="pipeline"><h3>${esc(title)}</h3><p class="intro">${esc(intro)}</p>${content}</section>`;
@@ -42,7 +42,7 @@ const html = `<!doctype html>
 <style>${css}\n.pipeline h3{margin:0 0 7px;font-size:17px}.pipeline .intro{font-size:12px}a{color:var(--blue)}.reconcile{border-color:#7a4400;background:#1b1308}.sub,.intro,.label,th,.footer{color:#aaa}.footer a{display:inline-block;margin:4px 6px}.card .value{overflow-wrap:anywhere}.table+.table{margin-top:12px}</style></head>
 <body><main class="wrap">
 <header class="header"><div class="logo">UM</div><div><h1>Weekly Numbers — Midweek</h1><p>Urban Muaythai · Miami · Friday–Thursday reporting period</p></div></header>
-<div class="period"><div><h2>Fri 23 Oct – Thu 29 Oct 2026</h2><p>Week 26 · includes Thursday 29 October cancellations already recorded</p><span class="currentflag">Provisional · week not yet closed</span></div><div class="asof">Synced with Daily Numbers<br>Wed 28 October 2026 · 12:30pm Brisbane</div></div>
+<div class="period"><div><h2>Fri 23 Oct – Thu 29 Oct 2026</h2><p>Week 26 · includes Thursday 29 October cancellations already recorded</p><span class="currentflag">Provisional · week not yet closed</span></div><div class="asof">Synced with Daily Numbers<br>Wed 28 October 2026 · 1:15pm Brisbane</div></div>
 
 <section class="qa"><h3>The headline</h3><p>A growth week so far. ${rolled} rollovers and ${stm} straight-to-membership against ${count} autopay cancellations, so we're at ${signed(net)} on autopay. Still provisional until the week closes on Thursday.</p></section>
 
@@ -71,7 +71,7 @@ ${section(`Rollover outcomes — ${d.outcomes.length} resolved`, 'Outcome week f
 
 ${section(`Rollover pipeline — ${d.pipeline.length} overdue decisions`, 'Decisions due this week (or overdue) with no roll-over status in the NMS Master yet.', table(['Member','Due','State','Status / attendance','Next action'], d.pipeline.map(x=>[x.name, day(x.due), x.state, `${x.status} · ${x.visits}`, x.action])) + '<p class="sub">Annabel Solvik (Rolled Over, 23 Oct) and Mereoni Robbins (Not Rolled Over, 26 Oct) had their Rolled Over Dates filled on 28 Oct and are now counted above.</p>')}
 
-${section(`Sales and deposits — ${intro} intro sales, ${d.sales.length} records`, 'Date Sold (NMS column S) controls this table. Daily Numbers records the same 5 intros: 1 phone, 3 walk-in and 1 with no source yet (Francesc). Deposits are recorded amounts, not full contract value.', table(['Member','Date sold','Type','Source','Deposit','Note'], d.sales.map(s=>[s.name, day(s.sold), s.type, s.source, money(s.deposit), s.note])) + `<p class="sub">Total recorded deposits ${money(total)} including William’s $50 straight-to-membership part payment.</p>`)}
+${section(`Sales and deposits — ${intro} intro sales, ${d.sales.length} records`, 'Date Sold (NMS column S) controls this table. Daily Numbers records the same 6 intros: 2 phone, 3 walk-in and 1 with no source yet (Francesc). Deposits are recorded amounts, not full contract value.', table(['Member','Date sold','Type','Source','Deposit','Note'], d.sales.map(s=>[s.name, day(s.sold), s.type, s.source, money(s.deposit), s.note])) + `<p class="sub">Total recorded deposits ${money(total)} including William’s $50 straight-to-membership part payment.</p>`)}
 
 ${section(`Look-ahead — ${d.lookAhead.period}`, 'Next Friday–Thursday week, shown for planning only.', table(['Member','Due','Note'], d.lookAhead.rolloversDue.map(x=>[x.name, x.due, x.note])) + table(['Autopay ending','Ends','Membership','Reason'], [...d.lookAhead.cancellations.map(c=>[c.name, c.end, c.membership, c.reason]), ...d.lookAhead.excludedCancellations.map(c=>[c.name + ' (not counted)', c.end, c.membership, c.reason])]) + `<p class="sub">${d.lookAhead.cancellations.length} autopay endings already booked for next week (1 adult · 2 teens · 1 kid).</p>`)}
 
