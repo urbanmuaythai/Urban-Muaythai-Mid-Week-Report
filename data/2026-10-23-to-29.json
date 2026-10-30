@@ -4,22 +4,22 @@
     "cutoff": "2026-10-29",
     "end": "2026-10-29",
     "timezone": "Australia/Brisbane",
-    "status": "Midweek, provisional; read Wednesday 28 October after the Daily Numbers Full Sync (re-run after Rolled Over Dates were filled)"
+    "status": "Final; week closed Thursday 29 October. Read Friday 30 October after the Daily Numbers Full Sync"
   },
   "sources": {
     "daily": "https://docs.google.com/spreadsheets/d/1sqS2xjIz03pmcEqY2WEoK-jrrqveNF0-UNvAaXbOhRg/edit#gid=128889242",
     "nms": "https://docs.google.com/spreadsheets/d/1RzZW1fI-7QRkiDHNBWkOJpbeDZ6GsFl7LrfM2uJP5Lc/edit#gid=1830289556",
     "cancellations": "https://docs.google.com/spreadsheets/d/1sqS2xjIz03pmcEqY2WEoK-jrrqveNF0-UNvAaXbOhRg/edit#gid=2024648094",
-    "readDate": "2026-10-28"
+    "readDate": "2026-10-30"
   },
   "daily": {
     "week": 26,
-    "rollovers": 3,
+    "rollovers": 4,
     "rolloversKids": 1,
-    "rolloversKs": 2,
-    "intro": 6,
+    "rolloversKs": 3,
+    "intro": 9,
     "phone": 2,
-    "walkIn": 3,
+    "walkIn": 6,
     "referral": 0,
     "other": 1,
     "straightToMembership": 1,
@@ -27,7 +27,7 @@
     "adultCancellations": 2,
     "teensCancellations": 0,
     "kidsCancellations": 0,
-    "net": 2
+    "net": 3
   },
   "operatingCancellations": [
     {
@@ -111,10 +111,10 @@
     {
       "name": "Francesc Risco",
       "type": "KS 28 days",
-      "source": "Not recorded",
+      "source": "Walk-in",
       "sold": "2026-10-27",
-      "deposit": 240,
-      "note": "$40 casual + $200 KS deposit; KS not set up yet, not in Slack"
+      "deposit": 200,
+      "note": "$200 KS deposit after a $40 casual; Kickstarter set-up pending"
     },
     {
       "name": "Valentino Addevico",
@@ -123,6 +123,30 @@
       "sold": "2026-10-28",
       "deposit": 65,
       "note": "Kickstarter Weekly, starts Mon 2 Nov 6pm (first $65 due 28 Oct)"
+    },
+    {
+      "name": "Beau Selwood.",
+      "type": "KS 28 days",
+      "source": "Walk-in",
+      "sold": "2026-10-28",
+      "deposit": 240,
+      "note": "Kickstarter Upfront, paid at the desk (returning, second profile)"
+    },
+    {
+      "name": "Harrison Wortley",
+      "type": "1 Week Trial",
+      "source": "Not recorded",
+      "sold": "2026-10-29",
+      "deposit": 99,
+      "note": "Teens 1 Week Trial 29 Oct – 4 Nov; Jakob roll-over chat with dad Tue 3 Nov"
+    },
+    {
+      "name": "Elias Batista",
+      "type": "KS 28 days",
+      "source": "Walk-in",
+      "sold": "2026-10-29",
+      "deposit": 200,
+      "note": "$200 KS deposit after a $40 casual; waiting on Kickstarter form"
     }
   ],
   "outcomes": [
@@ -160,12 +184,19 @@
       "date": "2026-10-27",
       "type": "1 Week Trial",
       "to": "Teens Class (2x classes)"
+    },
+    {
+      "name": "Edana Marshall",
+      "status": "Rolled Over",
+      "date": "2026-10-29",
+      "type": "KS 28 days",
+      "to": "Fun & Fitness (3 classes per week) Weekly T6"
     }
   ],
   "rate": {
-    "rolled": 3,
+    "rolled": 4,
     "no": 0,
-    "eligible": 3,
+    "eligible": 4,
     "percent": 100,
     "target": 80
   },
@@ -176,7 +207,7 @@
       "state": "Overdue",
       "status": "Blank – still on KS Weekly $60/wk",
       "visits": "2 + 3 + 2 + 3",
-      "action": "Jakob to have the roll-over chat at the desk (trained 27 Oct)"
+      "action": "Jakob task: roll-over chat at his next visit (still $60/wk KS Weekly)"
     },
     {
       "name": "Sebastian Wojtkiewicz",
@@ -191,34 +222,29 @@
     "period": "Fri 30 Oct – Thu 5 Nov",
     "rolloversDue": [
       {
+        "name": "Val Torrisi.",
+        "due": "Sat 31 Oct",
+        "note": "Already rolled over (dated 31 Oct, counts next week)"
+      },
+      {
+        "name": "Phoenix Muller.",
+        "due": "Mon 2 Nov",
+        "note": "Extended – waiting on decision"
+      },
+      {
         "name": "Remy Martinot",
         "due": "Mon 2 Nov",
         "note": "Teens trial – Jakob roll-over chat with parent"
       },
       {
-        "name": "Phoenix Muller.",
-        "due": "Mon 2 Nov",
-        "note": "Extended"
-      },
-      {
-        "name": "Pheline Rosin",
-        "due": "Tue 3 Nov",
-        "note": "Extended"
-      },
-      {
         "name": "Jed Meadowcroft",
         "due": "Wed 4 Nov",
-        "note": "15-18 KS – Jakob task due 30 Oct"
+        "note": "15-18 KS – Jakob roll-over chat"
       },
       {
-        "name": "Edana Marshall",
+        "name": "Harrison Wortley",
         "due": "Thu 5 Nov",
-        "note": ""
-      },
-      {
-        "name": "Val Torrisi.",
-        "due": "Thu 5 Nov",
-        "note": ""
+        "note": "Teens trial – Jakob chat with dad Tue 3 Nov"
       },
       {
         "name": "Jonathan Lindal.",
@@ -249,6 +275,12 @@
         "end": "Mon 2 Nov",
         "membership": "Teens Class (unlimited)",
         "reason": "Can't afford it right now"
+      },
+      {
+        "name": "O’Shay Bayne",
+        "end": "Thu 5 Nov",
+        "membership": "Fun & Fitness 3x T6",
+        "reason": "Physical health"
       },
       {
         "name": "James Belding",
