@@ -1,0 +1,47 @@
+{
+  "period": {"start":"2026-10-30","cutoff":"2026-11-04","end":"2026-11-05","timezone":"Australia/Brisbane","status":"Midweek; week still open"},
+  "sources": {
+    "daily":"https://docs.google.com/spreadsheets/d/1sqS2xjIz03pmcEqY2WEoK-jrrqveNF0-UNvAaXbOhRg/edit#gid=128889242",
+    "nms":"https://docs.google.com/spreadsheets/d/1RzZW1fI-7QRkiDHNBWkOJpbeDZ6GsFl7LrfM2uJP5Lc/edit#gid=1830289556",
+    "cancellations":"https://docs.google.com/spreadsheets/d/1sqS2xjIz03pmcEqY2WEoK-jrrqveNF0-UNvAaXbOhRg/edit#gid=2024648094",
+    "readDate":"2026-11-04"
+  },
+  "daily":{"week":27,"rollovers":3,"intro":5,"phone":2,"walkIn":1,"referral":0,"other":2,"straightToMembership":1,"cancellations":5,"adultCancellations":2,"teensCancellations":2,"kidsCancellations":1,"net":-1},
+  "operatingCancellations":[
+    {"name":"Alex Eum","membership":"Kids 7-10 years (2 x classes)","end":"2026-10-30","reason":"Stuck overseas"},
+    {"name":"Alec Savins","membership":"Teens Class (2x classes)","end":"2026-11-02","reason":"Taking on more swimming days"},
+    {"name":"Lincoln Gagie","membership":"Teens Class (unlimited)","end":"2026-11-02","reason":"Financially cannot afford it right now"},
+    {"name":"O'Shay Bayne","membership":"Fun & Fitness (3 classes per week) Weekly T6","end":"2026-11-05","reason":"Physical health"},
+    {"name":"James Belding","membership":"Fun & Fitness (3 classes per week) Weekly T6","end":"2026-11-05","reason":"Schedule too busy; in agreement, $535.50 fee recorded"}
+  ],
+  "outcomes":[
+    {"name":"Sebastian Wojtkiewicz","status":"Rolled Over","date":"2026-10-30","to":"Accelerate WEEKLY 6 month membership"},
+    {"name":"Val Torrisi.","status":"Rolled Over","date":"2026-10-31","to":"Accelerate WEEKLY 6 month membership"},
+    {"name":"Jimmy Wreghitt.","status":"Rolled Over","date":"2026-11-02","to":"Fun & Fitness (3 classes per week) Weekly T6"},
+    {"name":"Kai Lacey","status":"Straight to Membership","date":"2026-11-02","to":"Accelerate WEEKLY 6 month membership"}
+  ],
+  "futureDatedOutcomes":[
+    {"name":"Liam Tidey.","status":"Rolled Over","date":"2026-11-05"},
+    {"name":"Dale Cleary","status":"NO","date":"2026-11-05"}
+  ],
+  "pipeline":[
+    {"name":"Phoenix Muller.","due":"2026-11-02","status":"Waiting","attendance":"3 + 5 + 3 + 4"},
+    {"name":"Remy Martinot","due":"2026-11-02","status":"Blank","attendance":"0 + 0 + 0 + 0"},
+    {"name":"Jed Meadowcroft","due":"2026-11-04","status":"Blank","attendance":"3 + 2 + 3 + 2"},
+    {"name":"Harrison Wortley","due":"2026-11-05","status":"Blank","attendance":"0 + 0 + 0 + 0"},
+    {"name":"Jonathan Lindal.","due":"2026-11-05","status":"Blank","attendance":"1 + 2 + 4 + 3"}
+  ],
+  "sales":[
+    {"name":"Elias Alipour","type":"KS 28 days","source":"Phone","sold":"2026-10-30","deposit":240},
+    {"name":"Louis Spatt.","type":"KS 28 days","source":"Phone","sold":"2026-11-02","deposit":240},
+    {"name":"Vincent Chen","type":"1 Week Trial","source":"Walk-in","sold":"2026-11-02","deposit":99},
+    {"name":"Kai Lacey","type":"Membership","source":null,"sold":"2026-11-02","deposit":null},
+    {"name":"chaz richmond","type":"KS 28 days","source":null,"sold":"2026-11-03","deposit":240},
+    {"name":"Bailey Spencer","type":"1 Week Trial","source":null,"sold":"2026-11-03","deposit":99}
+  ],
+  "recordedDepositTotal":918,
+  "currentRate":{"rolled":3,"no":0,"eligible":3,"percent":100,"target":80},
+  "thursdayScenario":{"rollovers":4,"straightToMembership":1,"cancellations":5,"net":0,"rolled":4,"no":1,"eligible":5,"ratePercent":80},
+  "reconciliationException":"Daily Numbers already includes two Thursday cancellations, while Liam Tidey's Thursday rollover and Dale Cleary's Thursday NO outcome are not yet reflected in its rollover total. Raw figures are preserved and the Thursday scenario is shown separately.",
+  "cancellationPolicy":"Only autopay memberships count. Kickstarter, trial and Short Term endings, casuals, deposits, tour products and other one-off products are excluded."
+}
