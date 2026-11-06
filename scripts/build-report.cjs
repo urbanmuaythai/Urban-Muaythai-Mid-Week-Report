@@ -16,8 +16,7 @@ const intro = d.sales.filter(s => s.type !== 'Membership').length;
 const rolled = d.outcomes.filter(o => o.status === 'Rolled Over').length;
 const stm = d.outcomes.filter(o => o.status === 'Straight to Membership').length;
 const no = d.outcomes.filter(o => o.status === 'NO').length;
-const moves = d.shortTermMoves.length;
-const net = rolled + stm + moves - count;
+const net = rolled + stm - count;
 assert.equal(count, d.daily.cancellations);
 assert.equal(d.daily.cancellations, d.daily.adultCancellations + d.daily.teensCancellations + d.daily.kidsCancellations);
 assert(d.operatingCancellations.every(c => c.end >= d.period.start && c.end <= d.period.cutoff && !/kickstarter|trial|short term/i.test(c.membership)));
@@ -45,7 +44,7 @@ const html = `<!doctype html>
 <header class="header"><div class="logo">UM</div><div><h1>Weekly Numbers — Final</h1><p>Urban Muaythai · Miami · Friday–Thursday reporting period</p></div></header>
 <div class="period"><div><h2>Fri 30 Oct – Thu 5 Nov 2026</h2><p>Week 27 · closed Thursday 5 November</p><span class="currentflag">Final · week closed</span></div><div class="asof">Synced with Daily Numbers<br>Fri 6 November 2026 · Brisbane</div></div>
 
-<section class="qa"><h3>The headline</h3><p>A growth week. ${rolled} rollovers and ${stm} straight-to-membership against ${count} autopay cancellations, plus Sean Forster moving from Short Term onto Fun &amp; Fitness, so autopay finished ${signed(net)} (312 → 314). Rollover rate ${d.rate.percent}%: ${rolled} of ${d.rate.eligible}.</p></section>
+<section class="qa"><h3>The headline</h3><p>A growth week. ${rolled} rollovers and ${stm} straight-to-membership against ${count} autopay cancellations, so net movement is ${signed(net)}. Autopay went from 312 to 314, because Sean Forster also moved from Short Term onto Fun &amp; Fitness. Rollover rate ${d.rate.percent}%: ${rolled} of ${d.rate.eligible}.</p></section>
 
 <section class="qa"><h3>Weekly management answers</h3><p class="intro">Every figure below matches the Daily Numbers grid for Week 27 after Friday's Full Sync, except cancellations: the grid shows 6 because it counts Amelie Watts's downgrade. Cancellations count autopay memberships only — Kickstarter, trial and Short Term endings, casuals and deposits are excluded.</p><div class="qa-list">
 ${qa('How many cancellations are recorded?', `${count} counted · excludes Amelie Watts's downgrade`, 'gold')}
@@ -59,7 +58,7 @@ ${qa('How many sales and deposits are recorded?', `${intro} intro · ${d.sales.l
 ${card('Daily Numbers cancellations', count, `${d.daily.adultCancellations} adults · ${d.daily.teensCancellations} teens · ${d.daily.kidsCancellations} kids`, 'gold')}
 ${card('Rollovers', rolled, 'Sebastian · Val · Jimmy · Liam (KS) · Harrison (trial)', 'green')}
 ${card('Straight to membership', stm, 'Kai Lacey (returning ex-member)', 'green')}
-${card('Net movement', signed(net), `${rolled} RO + ${stm} STM + ${moves} Short Term move − ${count} cancels`, net >= 0 ? 'green' : 'red')}
+${card('Net movement', signed(net), `${rolled} RO + ${stm} STM − ${count} cancels`, net >= 0 ? 'green' : 'red')}
 ${card('Rollover rate', d.rate.percent + '%', `${rolled} of ${d.rate.eligible} · target ${d.rate.target}%`, 'green')}
 ${card('Intro sales', intro, `${d.daily.phone} phone · ${d.daily.walkIn} walk-in · ${d.daily.other} source not recorded`, 'gold')}
 </div>

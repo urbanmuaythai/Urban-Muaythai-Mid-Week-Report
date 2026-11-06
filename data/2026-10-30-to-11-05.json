@@ -29,8 +29,7 @@
     "adultCancellations": 2,
     "teensCancellations": 2,
     "kidsCancellations": 1,
-    "net": 2,
-    "shortTermMoves": 1
+    "net": 1
   },
   "operatingCancellations": [
     {
@@ -346,13 +345,5 @@
       }
     ],
     "excludedCancellations": []
-  },
-  "shortTermMoves": [
-    {
-      "name": "Sean Forster.",
-      "date": "2026-11-02",
-      "from": "Short Term",
-      "to": "Fun & Fitness (3 classes per week) Weekly T6"
-    }
-  ]
+  }
 }
