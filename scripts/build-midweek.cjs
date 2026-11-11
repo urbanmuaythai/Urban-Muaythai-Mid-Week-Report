@@ -4,7 +4,7 @@ const fs = require('node:fs');
 const path = require('node:path');
 const assert = require('node:assert/strict');
 const root = path.resolve(__dirname, '..');
-const file = process.argv[2] ?? 'data/2026-10-30-to-11-05.json';
+const file = process.argv[2] ?? 'data/2026-11-06-to-12.json';
 const d = JSON.parse(fs.readFileSync(path.resolve(root, file), 'utf8'));
 // Keep the current page's look: reuse its style block
 const css = fs.readFileSync(path.join(root, 'index.html'), 'utf8').match(/<style>([\s\S]*?)<\/style>/)[1].trim();
@@ -15,7 +15,7 @@ const longDay = iso => new Date(iso + 'T00:00:00').toLocaleDateString('en-AU', {
 const signed = n => (n > 0 ? '+' : n < 0 ? '−' : '') + Math.abs(n);
 const first = name => name.split(' ')[0];
 
-// Everything on the page must agree with the Daily Numbers grid.
+// Everything on the page must agree with the reconciled daily block (NMS app + Daily Numbers cancellations).
 const count = d.operatingCancellations.length;
 const rolledList = d.outcomes.filter(o => o.status === 'Rolled Over');
 const rolled = rolledList.length;
@@ -55,11 +55,11 @@ const html = `<!doctype html>
 <style>${css}</style></head>
 <body><main class="wrap">
 <header class="header"><div class="logo">UM</div><div><h1>Midweek Numbers</h1><p>Urban Muaythai · Miami · Friday–Thursday reporting period</p></div></header>
-<div class="period"><div><h2>${esc(day(d.period.start))} – ${esc(day(d.period.end))} 2026</h2><p>Week ${d.period.week} · ${esc(cutoff)} midweek check</p><span class="currentflag">Live · not yet final</span></div><div class="asof">Checked against live Daily Numbers + NMS<br>${esc(d.period.checked)}</div></div>
+<div class="period"><div><h2>${esc(day(d.period.start))} – ${esc(day(d.period.end))} 2026</h2><p>Week ${d.period.week} · ${esc(cutoff)} midweek check</p><span class="currentflag">Live · not yet final</span></div><div class="asof">Checked against NMS app + Daily Numbers<br>${esc(d.period.checked)}</div></div>
 
-<section class="qa"><h3>The headline</h3><p>${esc(`Daily Numbers records ${rolled} rollovers and ${stm} straight-to-membership against ${count} autopay cancellations, for net movement of ${signed(net)}. Intro sales are ${intro}, with ${money(total)} recorded across ${d.sales.length} sale records. ${rolled} of ${eligible} rollover decisions so far rolled over (${pct}%). The week is still open: ${d.pipeline.length} decisions are outstanding.`)}</p></section>
+<section class="qa"><h3>The headline</h3><p>${esc(`NMS records ${rolled} rollovers and ${stm} straight-to-membership against ${count} autopay cancellations, for net movement of ${signed(net)}. Intro sales are ${intro}, with ${money(total)} recorded across ${d.sales.length} sale records. ${rolled} of ${eligible} rollover decisions so far rolled over (${pct}%). The week is still open: ${d.pipeline.length} decisions are outstanding.`)}</p></section>
 
-<section class="qa"><h3>Weekly management answers</h3><p class="intro">The headline figures below reproduce the live Week ${d.daily.week} Daily Numbers grid. Kickstarter, trial, Short Term, casual, deposit and tour-product endings are excluded from cancellations.</p><div class="qa-list">
+<section class="qa"><h3>Weekly management answers</h3><p class="intro">Roll-overs, sales and the rate come from the NMS app; cancellations match the live Week ${d.daily.week} Daily Numbers grid. Kickstarter, trial, Short Term, casual, deposit and tour-product endings are excluded from cancellations.</p><div class="qa-list">
 ${qa('How many cancellations are recorded?', `${count} counted · matches Daily Numbers`, 'gold')}
 ${qa('How many rollovers and direct joins are recorded?', `${rolled} rollovers · ${stm} straight to membership`)}
 ${qa('Growth, loss or neutral?', `Net movement: ${signed(net)}`, netColor)}
@@ -84,7 +84,7 @@ ${section(`Rollover outcomes — ${d.outcomes.length} resolved so far`, 'Outcome
 
 ${section(`Rollover pipeline — ${d.pipeline.length} open decisions`, 'Blank or waiting NMS outcomes due inside this reporting week.', table(['Member','Due','State','Status / attendance','Next action'], d.pipeline.map(x=>[x.name, day(x.due), pill(x.state), `${x.status} · ${x.visits}`, x.action])))}
 
-${section(`Sales and deposits — ${intro} intro sales, ${d.sales.length} records`, `Date Sold in NMS controls this table. Daily Numbers records ${intro} intros: ${d.daily.phone} phone, ${d.daily.walkIn} walk-in, ${d.daily.referral} referral and ${d.daily.other} other.`, table(['Member','Date sold','Type','Source','Deposit','Note'], d.sales.map(s=>[s.name, day(s.sold), s.type, s.source ?? 'Other / not recorded', s.deposit == null ? 'Blank' : money(s.deposit), s.note])) + `<p class="sub">Recorded deposit total: ${money(total)} (first payments only, not full contract value).</p>`)}
+${section(`Sales and deposits — ${intro} intro sales, ${d.sales.length} records`, `Date Sold in NMS controls this table. NMS records ${intro} intros: ${d.daily.phone} phone, ${d.daily.walkIn} walk-in, ${d.daily.referral} referral and ${d.daily.other} other.`, table(['Member','Date sold','Type','Source','Deposit','Note'], d.sales.map(s=>[s.name, day(s.sold), s.type, s.source ?? 'Other / not recorded', s.deposit == null ? 'Blank' : money(s.deposit), s.note])) + `<p class="sub">Recorded deposit total: ${money(total)} (first payments only, not full contract value).</p>`)}
 
 ${section(`Previous week comparison — ${p.label}`, 'The previous week is closed; the current week remains live.', table(['Metric', `${range} · midweek`, p.label, 'Movement'], [
 ['Cancellations', `${count} (${d.daily.adultCancellations} adult · ${d.daily.teensCancellations} teen · ${d.daily.kidsCancellations} kid)`, `${p.cancellations} (${p.cancellationDetail})`, signed(count - p.cancellations) || 'No change'],
@@ -92,9 +92,9 @@ ${section(`Previous week comparison — ${p.label}`, 'The previous week is close
 ['Net movement', signed(net), signed(p.net), signed(net - p.net) || 'No change'],
 ['Intro sales', intro, p.intro, signed(intro - p.intro) || 'No change'],
 ['Current rollover rate', `${rolled}/${eligible} = ${pct}%`, `${p.rolled}/${p.eligible} = ${Math.round(p.rolled / p.eligible * 100)}%`, pct === Math.round(p.rolled / p.eligible * 100) ? 'No change' : `${signed(pct - Math.round(p.rolled / p.eligible * 100))} pts`],
-]) + '<p><a href="reports/2026-10-23-to-29-final.html">23–29 October final</a> · <a href="reports/2026-10-23-to-29-midweek.html">23–29 October midweek</a> · <a href="reports/2026-10-16-to-22.html">16–22 October</a></p>')}
+]) + '<p><a href="reports/2026-10-30-to-11-05-final.html">30 Oct – 5 Nov final</a> · <a href="reports/2026-10-30-to-11-05-midweek.html">30 Oct – 5 Nov midweek</a> · <a href="reports/2026-10-23-to-29-final.html">23–29 October final</a> · <a href="reports/2026-10-16-to-22.html">16–22 October</a></p>')}
 
-<section class="caution"><h3>Synced with NMS — week still open</h3><p>${esc(d.syncNote)}</p></section>
+<section class="caution"><h3>Where the numbers come from — week still open</h3><p>${esc(d.syncNote)}</p></section>
 <footer class="footer">Urban Muaythai · Midweek Numbers · ${esc(range)} 2026 · checked ${esc(d.period.checked)}<br>
 <a href="${esc(d.sources.daily)}">Daily Numbers grid</a> · <a href="${esc(d.sources.cancellations)}">Cancellation Raw Dump</a> · <a href="${esc(d.sources.nms)}">NMS reports</a> · <a href="${esc(file)}">Reviewed data snapshot</a>
 </footer>

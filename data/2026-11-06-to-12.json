@@ -1,0 +1,102 @@
+{
+  "period": {
+    "start": "2026-11-06",
+    "cutoff": "2026-11-11",
+    "end": "2026-11-12",
+    "week": 28,
+    "timezone": "Australia/Brisbane",
+    "status": "Midweek; week still open",
+    "checked": "Wed 11 November 2026 · Brisbane"
+  },
+  "sources": {
+    "daily": "https://docs.google.com/spreadsheets/d/1sqS2xjIz03pmcEqY2WEoK-jrrqveNF0-UNvAaXbOhRg/edit#gid=128889242",
+    "nms": "https://urban-army-nms.vercel.app/reports",
+    "cancellations": "https://docs.google.com/spreadsheets/d/1sqS2xjIz03pmcEqY2WEoK-jrrqveNF0-UNvAaXbOhRg/edit#gid=2024648094",
+    "readDate": "2026-11-11"
+  },
+  "daily": {
+    "week": 28,
+    "rollovers": 12,
+    "intro": 4,
+    "phone": 0,
+    "walkIn": 0,
+    "referral": 0,
+    "other": 4,
+    "straightToMembership": 0,
+    "cancellations": 4,
+    "adultCancellations": 4,
+    "teensCancellations": 0,
+    "kidsCancellations": 0,
+    "net": 8
+  },
+  "operatingCancellations": [
+    {"name": "Jack Proctor", "membership": "Accelerate WEEKLY 6 month membership", "end": "2026-11-07", "reason": "Working away"},
+    {"name": "Pheonix Hyde", "membership": "Accelerate WEEKLY 6 month membership", "end": "2026-11-09", "reason": "Financial problems (in agreement, hardship exception)"},
+    {"name": "Kevin Dix", "membership": "Fun & Fitness (3 classes per week) Weekly T6", "end": "2026-11-11", "reason": "Injury"},
+    {"name": "Valeria Hernandez", "membership": "Fun & Fitness (3 classes per week) Weekly T6", "end": "2026-11-12", "reason": "Moving to Madrid (flight ticket on file); Thursday ending already entered"}
+  ],
+  "excluded": [
+    {"name": "Teyahna Mcglinchey.", "end": "2026-11-09", "membership": "Kickstarter Program Upfront", "why": "Kickstarter outcome; NMS records Not Rolled Over"},
+    {"name": "Ezequiel ortega", "end": "2026-11-09", "membership": "Kickstarter Program Weekly", "why": "Kickstarter outcome; NMS records NO"},
+    {"name": "Jakob Taylor", "end": "2026-11-07", "membership": "Sponsored", "why": "Staff sponsorship ended when he left; now on Accelerate from 12 Nov"},
+    {"name": "Joseph McKibben", "end": "2026-11-10", "membership": "Sponsored", "why": "Free sponsorship expired; not autopay (asking Mel whether it continues)"},
+    {"name": "Vincent Chen + Bailey Spencer", "end": "Sun 8 Nov / Mon 9 Nov", "membership": "Teens 1 Week Trials", "why": "Trial expiries; both rolled over"},
+    {"name": "Ella Haapala", "end": "2026-11-09", "membership": "Casual Session", "why": "Casual; she joined the Kickstarter next day"}
+  ],
+  "outcomes": [
+    {"name": "Jonathan Lindal.", "status": "Rolled Over", "date": "2026-11-06", "from": "KS 28 days", "to": "Membership"},
+    {"name": "Kirsty Williams", "status": "Rolled Over", "date": "2026-11-06", "from": "KS 28 days", "to": "Membership"},
+    {"name": "Josh Thomas.", "status": "Rolled Over", "date": "2026-11-06", "from": "KS 28 days", "to": "Membership"},
+    {"name": "Joanna Collins.", "status": "Rolled Over", "date": "2026-11-06", "from": "KS 28 days", "to": "Membership"},
+    {"name": "Bailey Gray.", "status": "Rolled Over", "date": "2026-11-06", "from": "KS 28 days", "to": "Membership"},
+    {"name": "Emile Rupsyte", "status": "Rolled Over", "date": "2026-11-06", "from": "KS 28 days", "to": "Membership"},
+    {"name": "jarred whear.", "status": "Rolled Over", "date": "2026-11-06", "from": "KS 28 days", "to": "Accelerate WEEKLY 6 month membership"},
+    {"name": "Vincent Chen", "status": "Rolled Over", "date": "2026-11-06", "from": "Teens 1 Week Trial", "to": "Teens membership"},
+    {"name": "Uma Moya", "status": "Rolled Over", "date": "2026-11-09", "from": "KS 28 days", "to": "Continues at $65/wk (asked about options 11 Nov)"},
+    {"name": "Yvonne Walter", "status": "Rolled Over", "date": "2026-11-09", "from": "KS 28 days", "to": "Accelerate WEEKLY 6 month membership"},
+    {"name": "Teyahna Mcglinchey.", "status": "Not Rolled Over", "date": "2026-11-09", "from": "KS 28 days", "to": "Restarting in the new year"},
+    {"name": "Ezequiel ortega", "status": "NO", "date": "2026-11-09", "from": "KS 28 days", "to": "Not continuing"},
+    {"name": "Phoenix Muller.", "status": "Rolled Over", "date": "2026-11-10", "from": "KS 28 days", "to": "Accelerate WEEKLY 6 month membership"},
+    {"name": "Bailey Spencer", "status": "Rolled Over", "date": "2026-11-12", "from": "Teens 1 Week Trial", "to": "Teens Class (2x classes)"}
+  ],
+  "pipeline": [
+    {"name": "Remy Martinot", "due": "2026-11-02", "state": "Overdue", "status": "Waiting", "visits": "2 + 0", "action": "Confirm outcome (old sheet had Not Rolled Over 6 Nov)"},
+    {"name": "Jed Meadowcroft", "due": "2026-11-04", "state": "Overdue", "status": "Blank · mum agreed to roll, 15-18 form re-sent 10 Nov (link had expired)", "visits": "3 + 2 + 3 + 2", "action": "Get the 15-18 form signed, then set up membership"}
+  ],
+  "sales": [
+    {"name": "Ella Haapala", "type": "KS 28 days", "source": null, "sold": "2026-11-10", "deposit": 180, "note": "Kickstarter Upfront $180 + $40 casual 9 Nov; $20 short of $240, checking with Richie"},
+    {"name": "Cohen Braund", "type": "1 Week Trial", "source": null, "sold": "2026-11-10", "deposit": 99, "note": "Teens 1 Week Trial, paid EFTPOS"},
+    {"name": "Maddy Braund", "type": "1 Week Trial", "source": null, "sold": "2026-11-10", "deposit": 99, "note": "Teens 1 Week Trial from Thu 12 Nov; $99 not collected yet (Play On voucher?)"},
+    {"name": "Harrison Lyon", "type": "1 Week Trial", "source": null, "sold": "2026-11-10", "deposit": 99, "note": "Teens 1 Week Trial from Thu 12 Nov; $99 to collect at the desk"}
+  ],
+  "rate": {"rolled": 12, "no": 1, "eligible": 13, "percent": 92, "target": 80},
+  "prior": {
+    "label": "30 Oct – 5 Nov · final",
+    "cancellations": 5,
+    "cancellationDetail": "2 adult · 2 teen · 1 kid",
+    "rollovers": 5,
+    "straightToMembership": 1,
+    "net": 2,
+    "intro": 8,
+    "rolled": 5,
+    "eligible": 6
+  },
+  "syncNote": "Roll-overs, sales and the rate come from the NMS app (the source of truth since 27 Oct). The Daily Numbers grid for Week 28 still shows only 1 roll-over and 0 intro sales because its 7am sync reads the old NMS spreadsheet, which hasn't been updated with this week's decisions. Cancellations (4) match the grid. The Master will be brought into line before Friday's final.",
+  "cancellationPolicy": "Only autopay memberships count. Kickstarter, trial and Short Term endings, casuals, deposits, sponsorships, tour products and other one-off products are excluded.",
+  "lookAhead": {
+    "period": "Fri 13 – Thu 19 Nov",
+    "rolloversDue": [
+      {"name": "Paris Redwood, aiden williamson, Michael Karlovic.", "due": "Mon 16 Nov", "note": "Michael out a month with his back (medical hold offer)"},
+      {"name": "Cohen Braund", "due": "Mon 16 Nov", "note": "Teens trial, not booked into a class yet"},
+      {"name": "Kim Scharnitzky, Matthew Dundee", "due": "Tue 17 Nov", "note": "Kim 1 session in 4 weeks"},
+      {"name": "Tristan Lauder", "due": "Wed 18 Nov", "note": "Has been sick"},
+      {"name": "Maddy Braund, Harrison Lyon", "due": "Wed 18 Nov", "note": "Teens trials start Thu 12 Nov"}
+    ],
+    "cancellations": [
+      {"name": "Daniella Moraes", "end": "Fri 13 Nov", "membership": "Fun & Fitness 3x T6", "reason": "Moving overseas"},
+      {"name": "Khlohe Gosbee.", "end": "Fri 13 Nov", "membership": "Accelerate Weekly 6mo", "reason": "Injury"},
+      {"name": "Rebecca Gasparote-Cardiga", "end": "Fri 13 Nov", "membership": "Teens Class (2x)", "reason": "Too busy with school"},
+      {"name": "Poyong Huang", "end": "Thu 19 Nov", "membership": "Fun & Fitness 3x T6", "reason": "Injury (wrist surgery)"}
+    ]
+  }
+}
