@@ -19,9 +19,9 @@
     "rollovers": 12,
     "intro": 4,
     "phone": 0,
-    "walkIn": 0,
+    "walkIn": 1,
     "referral": 0,
-    "other": 4,
+    "other": 3,
     "straightToMembership": 3,
     "cancellations": 4,
     "adultCancellations": 4,
@@ -252,7 +252,7 @@
     {
       "name": "Ella Haapala",
       "type": "KS 28 days",
-      "source": null,
+      "source": "Walk-in",
       "sold": "2026-11-10",
       "deposit": 180,
       "note": "Kickstarter Upfront $180 + $40 casual 9 Nov; $20 short of $240, checking with Richie"
@@ -308,7 +308,7 @@
     "rolled": 5,
     "eligible": 6
   },
-  "syncNote": "Roll-overs, sales and the rate come from the NMS app (the source of truth since 27 Oct). The Daily Numbers grid for Week 28 still shows only 1 roll-over and 0 intro sales because its 7am sync reads the old NMS spreadsheet, which hasn't been updated with this week's decisions. Cancellations (4) match the grid. The Master will be brought into line before Friday's final.",
+  "syncNote": "Roll-overs, sales and the rate come from the NMS app. The old NMS spreadsheet was brought up to date on Wed 11 Nov and the Daily Numbers Full Sync re-run, so the Week 28 grid now matches: 12 rollovers, 3 straight to membership, 4 intro sales (1 walk-in, 3 not recorded), 4 cancellations, net +11.",
   "cancellationPolicy": "Only autopay memberships count. Kickstarter, trial and Short Term endings, casuals, deposits, sponsorships, tour products and other one-off products are excluded.",
   "lookAhead": {
     "period": "Fri 13 – Thu 19 Nov",

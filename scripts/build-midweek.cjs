@@ -59,7 +59,7 @@ const html = `<!doctype html>
 
 <section class="qa"><h3>The headline</h3><p>${esc(`NMS records ${rolled} rollovers and ${stm} straight-to-membership against ${count} autopay cancellations, for net movement of ${signed(net)}. Intro sales are ${intro}, with ${money(total)} recorded across ${d.sales.length} sale records. ${rolled} of ${eligible} rollover decisions so far rolled over (${pct}%). The week is still open: ${d.pipeline.length} decisions are outstanding.`)}</p></section>
 
-<section class="qa"><h3>Weekly management answers</h3><p class="intro">Roll-overs, sales and the rate come from the NMS app; cancellations match the live Week ${d.daily.week} Daily Numbers grid. Kickstarter, trial, Short Term, casual, deposit and tour-product endings are excluded from cancellations.</p><div class="qa-list">
+<section class="qa"><h3>Weekly management answers</h3><p class="intro">The headline figures below match the live Week ${d.daily.week} Daily Numbers grid (synced with the NMS app). Kickstarter, trial, Short Term, casual, deposit and tour-product endings are excluded from cancellations.</p><div class="qa-list">
 ${qa('How many cancellations are recorded?', `${count} counted · matches Daily Numbers`, 'gold')}
 ${qa('How many rollovers and direct joins are recorded?', `${rolled} rollovers · ${stm} straight to membership`)}
 ${qa('Growth, loss or neutral?', `Net movement: ${signed(net)}`, netColor)}
