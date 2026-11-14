@@ -1,27 +1,27 @@
 {
   "period": {
     "start": "2026-11-06",
-    "cutoff": "2026-11-11",
+    "cutoff": "2026-11-12",
     "end": "2026-11-12",
     "week": 28,
     "timezone": "Australia/Brisbane",
-    "status": "Midweek; week still open",
-    "checked": "Wed 11 November 2026 · Brisbane"
+    "status": "Final; week closed",
+    "checked": "Sat 14 November 2026 · Brisbane"
   },
   "sources": {
     "daily": "https://docs.google.com/spreadsheets/d/1sqS2xjIz03pmcEqY2WEoK-jrrqveNF0-UNvAaXbOhRg/edit#gid=128889242",
     "nms": "https://urban-army-nms.vercel.app/reports",
     "cancellations": "https://docs.google.com/spreadsheets/d/1sqS2xjIz03pmcEqY2WEoK-jrrqveNF0-UNvAaXbOhRg/edit#gid=2024648094",
-    "readDate": "2026-11-11"
+    "readDate": "2026-11-14"
   },
   "daily": {
     "week": 28,
     "rollovers": 12,
-    "intro": 4,
+    "intro": 5,
     "phone": 0,
     "walkIn": 1,
     "referral": 0,
-    "other": 3,
+    "other": 4,
     "straightToMembership": 3,
     "cancellations": 4,
     "adultCancellations": 4,
@@ -91,6 +91,12 @@
       "end": "2026-11-07",
       "membership": "Sponsored",
       "why": "Staff sponsorship ended; counted as straight to membership onto Accelerate instead"
+    },
+    {
+      "name": "Jack Andrews",
+      "end": "2026-11-12",
+      "membership": "Accelerate (12 month)",
+      "why": "Moved to a Sponsored membership 14 Nov (holds pads for the boxers); sponsorships are not counted"
     }
   ],
   "outcomes": [
@@ -99,119 +105,136 @@
       "status": "Rolled Over",
       "date": "2026-11-06",
       "from": "KS 28 days",
-      "to": "Membership"
+      "to": "Membership",
+      "type": "KS 28 days"
     },
     {
       "name": "Kirsty Williams",
       "status": "Rolled Over",
       "date": "2026-11-06",
       "from": "KS 28 days",
-      "to": "Membership"
+      "to": "Membership",
+      "type": "KS 28 days"
     },
     {
       "name": "Josh Thomas.",
       "status": "Rolled Over",
       "date": "2026-11-06",
       "from": "KS 28 days",
-      "to": "Membership"
+      "to": "Membership",
+      "type": "KS 28 days"
     },
     {
       "name": "Joanna Collins.",
       "status": "Rolled Over",
       "date": "2026-11-06",
       "from": "KS 28 days",
-      "to": "Membership"
+      "to": "Membership",
+      "type": "KS 28 days"
     },
     {
       "name": "Bailey Gray.",
       "status": "Rolled Over",
       "date": "2026-11-06",
       "from": "KS 28 days",
-      "to": "Membership"
+      "to": "Membership",
+      "type": "KS 28 days"
     },
     {
       "name": "Emile Rupsyte",
       "status": "Rolled Over",
       "date": "2026-11-06",
       "from": "KS 28 days",
-      "to": "Membership"
+      "to": "Membership",
+      "type": "KS 28 days"
     },
     {
       "name": "jarred whear.",
       "status": "Rolled Over",
       "date": "2026-11-06",
       "from": "KS 28 days",
-      "to": "Accelerate WEEKLY 6 month membership"
+      "to": "Accelerate WEEKLY 6 month membership",
+      "type": "KS 28 days"
     },
     {
       "name": "Vincent Chen",
       "status": "Rolled Over",
       "date": "2026-11-06",
       "from": "Teens 1 Week Trial",
-      "to": "Teens membership"
+      "to": "Teens membership",
+      "type": "Teens 1 Week Trial"
     },
     {
       "name": "Rusty Middleton",
       "status": "Straight to Membership",
       "date": "2026-11-06",
       "from": "Returning member (upfront had run out)",
-      "to": "15-18 years (3x per week)"
+      "to": "15-18 years (3x per week)",
+      "type": "Returning member (upfront had run out)"
     },
     {
       "name": "Uma Moya",
       "status": "Rolled Over",
       "date": "2026-11-09",
       "from": "KS 28 days",
-      "to": "Continues at $65/wk (asked about options 11 Nov)"
+      "to": "Accelerate WEEKLY 6 month membership ($65)",
+      "type": "KS 28 days"
     },
     {
       "name": "Yvonne Walter",
       "status": "Rolled Over",
       "date": "2026-11-09",
       "from": "KS 28 days",
-      "to": "Accelerate WEEKLY 6 month membership"
+      "to": "Accelerate WEEKLY 6 month membership",
+      "type": "KS 28 days"
     },
     {
       "name": "Teyahna Mcglinchey.",
       "status": "Not Rolled Over",
       "date": "2026-11-09",
       "from": "KS 28 days",
-      "to": "Restarting in the new year"
+      "to": "Restarting in the new year",
+      "type": "KS 28 days"
     },
     {
       "name": "Ezequiel ortega",
       "status": "NO",
       "date": "2026-11-09",
       "from": "KS 28 days",
-      "to": "Not continuing"
+      "to": "Not continuing",
+      "type": "KS 28 days"
     },
     {
       "name": "Sonny Middleton",
       "status": "Straight to Membership",
       "date": "2026-11-09",
       "from": "Returning member (upfront had run out)",
-      "to": "Teens Class (2x classes)"
+      "to": "Teens Class (2x classes)",
+      "type": "Returning member (upfront had run out)"
     },
     {
       "name": "Phoenix Muller.",
       "status": "Rolled Over",
       "date": "2026-11-10",
       "from": "KS 28 days",
-      "to": "Accelerate WEEKLY 6 month membership"
+      "to": "Accelerate WEEKLY 6 month membership",
+      "type": "KS 28 days"
     },
     {
       "name": "Jakob Taylor",
       "status": "Straight to Membership",
       "date": "2026-11-10",
       "from": "Ex-staff, Sponsored ended 7 Nov",
-      "to": "Accelerate WEEKLY 6 month membership"
+      "to": "Accelerate WEEKLY 6 month membership",
+      "type": "Ex-staff, Sponsored ended 7 Nov"
     },
     {
       "name": "Bailey Spencer",
       "status": "Rolled Over",
       "date": "2026-11-12",
       "from": "Teens 1 Week Trial",
-      "to": "Teens Class (2x classes)"
+      "to": "Teens Class (2x classes)",
+      "type": "Teens 1 Week Trial"
     }
   ],
   "pipeline": [
@@ -219,17 +242,17 @@
       "name": "Remy Martinot",
       "due": "2026-11-02",
       "state": "Overdue",
-      "status": "Waiting",
+      "status": "Waiting · sick, mum to sign the Teens form when he is better (Jakob 6 Nov)",
       "visits": "2 + 0",
-      "action": "Confirm outcome (old sheet had Not Rolled Over 6 Nov)"
+      "action": "Check in again; set up Teens membership when the form is signed"
     },
     {
       "name": "Jed Meadowcroft",
       "due": "2026-11-04",
       "state": "Overdue",
-      "status": "Blank · mum agreed to roll, 15-18 form re-sent 10 Nov (link had expired)",
+      "status": "Blank · mum agreed to roll, 15-18 form re-sent 10 Nov",
       "visits": "3 + 2 + 3 + 2",
-      "action": "Get the 15-18 form signed, then set up membership"
+      "action": "With Mel: get the 15-18 form signed, then set up membership"
     }
   ],
   "sales": [
@@ -271,7 +294,7 @@
       "source": null,
       "sold": "2026-11-10",
       "deposit": 99,
-      "note": "Teens 1 Week Trial from Thu 12 Nov; $99 not collected yet (Play On voucher?)"
+      "note": "Teens 1 Week Trial; did not come Thu 12 Nov; $99 not paid (Play On voucher question with Richie)"
     },
     {
       "name": "Harrison Lyon",
@@ -279,7 +302,7 @@
       "source": null,
       "sold": "2026-11-10",
       "deposit": 99,
-      "note": "Teens 1 Week Trial from Thu 12 Nov; $99 to collect at the desk"
+      "note": "Teens 1 Week Trial; trained Thu 12 Nov; $99 not marked paid (checking if a Play On voucher covered it)"
     },
     {
       "name": "Jakob Taylor",
@@ -288,6 +311,14 @@
       "sold": "2026-11-10",
       "deposit": 65,
       "note": "Ex-staff onto Accelerate; first $65 on Thu 12 Nov"
+    },
+    {
+      "name": "Max Freund",
+      "type": "1 Week Trial",
+      "source": null,
+      "sold": "2026-11-11",
+      "deposit": 99,
+      "note": "Teens 1 Week Trial (Richie); $99 paid EFTPOS 11 Nov; added since Wednesday"
     }
   ],
   "rate": {
@@ -299,29 +330,31 @@
   },
   "prior": {
     "label": "30 Oct – 5 Nov · final",
-    "cancellations": 5,
-    "cancellationDetail": "2 adult · 2 teen · 1 kid",
+    "note": "Week 27 closed Fri 6 Nov.",
+    "gridCancellations": 5,
+    "adultCancellations": 2,
+    "teensCancellations": 2,
+    "kidsCancellations": 1,
     "rollovers": 5,
     "straightToMembership": 1,
     "net": 2,
     "intro": 8,
-    "rolled": 5,
-    "eligible": 6
+    "rate": "5/6 = 83%"
   },
-  "syncNote": "Roll-overs, sales and the rate come from the NMS app. The old NMS spreadsheet was brought up to date on Wed 11 Nov and the Daily Numbers Full Sync re-run, so the Week 28 grid now matches: 12 rollovers, 3 straight to membership, 4 intro sales (1 walk-in, 3 not recorded), 4 cancellations, net +11.",
+  "syncNote": "Final figures come from the NMS app (roll-overs, straight to membership, sales, rate) and Clubworx (autopay cancellations by end date). Max Freund's Teens trial (sold 11 Nov) was added since Wednesday.",
   "cancellationPolicy": "Only autopay memberships count. Kickstarter, trial and Short Term endings, casuals, deposits, sponsorships, tour products and other one-off products are excluded.",
   "lookAhead": {
     "period": "Fri 13 – Thu 19 Nov",
     "rolloversDue": [
       {
-        "name": "Paris Redwood, aiden williamson, Michael Karlovic.",
+        "name": "Paris Redwood, aiden williamson",
         "due": "Mon 16 Nov",
-        "note": "Michael out a month with his back (medical hold offer)"
+        "note": "Paris hurt her achilles (back Mon 16 Nov)"
       },
       {
-        "name": "Cohen Braund",
+        "name": "Michael Karlovic.",
         "due": "Mon 16 Nov",
-        "note": "Teens trial, not booked into a class yet"
+        "note": "Already decided: Not Rolled Over (back injury), Kickstarter ends Sun 15 Nov"
       },
       {
         "name": "Kim Scharnitzky, Matthew Dundee",
@@ -329,14 +362,14 @@
         "note": "Kim 1 session in 4 weeks"
       },
       {
-        "name": "Tristan Lauder",
+        "name": "Tristan Lauder, Max Freund, Cohen Braund",
         "due": "Wed 18 Nov",
-        "note": "Has been sick"
+        "note": "Max + Cohen: Teens trials"
       },
       {
         "name": "Maddy Braund, Harrison Lyon",
-        "due": "Wed 18 Nov",
-        "note": "Teens trials start Thu 12 Nov"
+        "due": "Thu 19 Nov",
+        "note": "Teens trials; $99 payments to confirm"
       }
     ],
     "cancellations": [
@@ -359,11 +392,44 @@
         "reason": "Too busy with school"
       },
       {
+        "name": "John Story",
+        "end": "Fri 13 Nov",
+        "membership": "Accelerate Weekly 6mo",
+        "reason": "Leaving (cancelled by Mitch 14 Nov)"
+      },
+      {
+        "name": "Juliet Swanepoel.",
+        "end": "Wed 18 Nov",
+        "membership": "Fun & Fitness 3x T6",
+        "reason": "Medical (doctor's letter)"
+      },
+      {
+        "name": "Bobby Kilbane",
+        "end": "Thu 19 Nov",
+        "membership": "Accelerate Weekly 6mo",
+        "reason": "Hernia operation"
+      },
+      {
         "name": "Poyong Huang",
         "end": "Thu 19 Nov",
         "membership": "Fun & Fitness 3x T6",
         "reason": "Injury (wrist surgery)"
       }
+    ],
+    "excludedCancellations": [
+      {
+        "name": "Jakob Taylor",
+        "end": "Wed 18 Nov",
+        "membership": "Accelerate Weekly 6mo",
+        "reason": "Downgrade to Fun & Fitness from 19 Nov"
+      },
+      {
+        "name": "Ryan Hodson",
+        "end": "Sat 14 Nov",
+        "membership": "Fun & Fitness 3x T6",
+        "reason": "Upgrade to Accelerate from 14 Nov"
+      }
     ]
-  }
+  },
+  "shortTermMoves": []
 }
