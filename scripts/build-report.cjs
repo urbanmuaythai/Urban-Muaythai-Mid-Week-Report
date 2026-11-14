@@ -45,10 +45,10 @@ const html = `<!doctype html>
 <header class="header"><div class="logo">UM</div><div><h1>Weekly Numbers — Final</h1><p>Urban Muaythai · Miami · Friday–Thursday reporting period</p></div></header>
 <div class="period"><div><h2>Fri 6 – Thu 12 Nov 2026</h2><p>Week 28 · closed Thursday 12 November</p><span class="currentflag">Final · week closed</span></div><div class="asof">Checked against the NMS app + Clubworx<br>Sat 14 November 2026 · Brisbane</div></div>
 
-<section class="qa"><h3>The headline</h3><p>A strong growth week. ${rolled} rollovers and ${stm} straight-to-membership against ${count} autopay cancellations, so autopay finished ${signed(net)}. Rollover rate ${d.rate.percent}%: ${rolled} of ${d.rate.eligible}, well above the 80% target. Unchanged from Wednesday except one more intro sale (Max Freund's Teens trial).</p></section>
+<section class="qa"><h3>The headline</h3><p>A strong growth week. ${rolled} rollovers and ${stm} straight-to-membership against ${count} autopay cancellations, so autopay finished ${signed(net)}. Rollover rate ${d.rate.percent}%: ${rolled} of ${d.rate.eligible}, well above the 80% target. Since Wednesday: one more intro sale (Max Freund's Teens trial) and one more cancellation (Jack Andrews moved from paid Accelerate to a Sponsored membership).</p></section>
 
 <section class="qa"><h3>Weekly management answers</h3><p class="intro">Roll-overs, straight to membership, sales and the rate come from the NMS app; cancellations from Clubworx by membership end date. Cancellations count autopay memberships only — Kickstarter, trial and Short Term endings, casuals and deposits are excluded.</p><div class="qa-list">
-${qa('How many cancellations are recorded?', `${count} counted · Jack Andrews (moved to Sponsored) not counted`, 'gold')}
+${qa('How many cancellations are recorded?', `${count} counted · includes Jack Andrews (paid autopay → Sponsored)`, 'gold')}
 ${qa('How many rollovers and direct joins are confirmed?', `${rolled} rollovers · ${stm} straight to membership`)}
 ${qa('Growth, loss or neutral?', `Net movement: ${signed(net)}`, net >= 0 ? 'green' : 'red')}
 ${qa('Rollover rate against the 80% target?', `${d.rate.percent}% — ${rolled} of ${d.rate.eligible} eligible outcomes`, 'green')}

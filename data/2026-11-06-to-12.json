@@ -23,11 +23,11 @@
     "referral": 0,
     "other": 4,
     "straightToMembership": 3,
-    "cancellations": 4,
-    "adultCancellations": 4,
+    "cancellations": 5,
+    "adultCancellations": 5,
     "teensCancellations": 0,
     "kidsCancellations": 0,
-    "net": 11
+    "net": 10
   },
   "operatingCancellations": [
     {
@@ -47,6 +47,12 @@
       "membership": "Fun & Fitness (3 classes per week) Weekly T6",
       "end": "2026-11-11",
       "reason": "Injury"
+    },
+    {
+      "name": "Jack Andrews",
+      "membership": "Accelerate (Unlimited Classes & weights area use) 12 month membership",
+      "end": "2026-11-12",
+      "reason": "Now a pad holder; moved onto a Sponsored membership (paid autopay ended)"
     },
     {
       "name": "Valeria Hernandez",
@@ -91,12 +97,6 @@
       "end": "2026-11-07",
       "membership": "Sponsored",
       "why": "Staff sponsorship ended; counted as straight to membership onto Accelerate instead"
-    },
-    {
-      "name": "Jack Andrews",
-      "end": "2026-11-12",
-      "membership": "Accelerate (12 month)",
-      "why": "Moved to a Sponsored membership 14 Nov (holds pads for the boxers); sponsorships are not counted"
     }
   ],
   "outcomes": [
