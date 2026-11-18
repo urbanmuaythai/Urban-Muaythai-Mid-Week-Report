@@ -16,7 +16,7 @@
   },
   "daily": {
     "week": 29,
-    "rollovers": 3,
+    "rollovers": 2,
     "intro": 5,
     "phone": 0,
     "walkIn": 0,
@@ -27,7 +27,7 @@
     "adultCancellations": 6,
     "teensCancellations": 1,
     "kidsCancellations": 0,
-    "net": -4
+    "net": -5
   },
   "operatingCancellations": [
     {
@@ -129,14 +129,6 @@
       "type": "KS 28 days"
     },
     {
-      "name": "Matthew Dundee",
-      "status": "Rolled Over",
-      "date": "2026-11-17",
-      "from": "KS 28 days",
-      "to": "Membership ($65/wk from 23 Nov)",
-      "type": "KS 28 days"
-    },
-    {
       "name": "Ella Schubel",
       "status": "Rolled Over",
       "date": "2026-11-17",
@@ -195,12 +187,20 @@
       "action": "Roll-over text to mum sent 18 Nov (Play On voucher)"
     },
     {
+      "name": "Matthew Dundee",
+      "due": "2026-11-17",
+      "state": "Due",
+      "status": "Waiting on 6 Month Agreement · happy to roll over (note 14 Nov); still on Kickstarter plan in Clubworx",
+      "visits": "2 + 3 + 2 + 6",
+      "action": "Agreement emailed + reminder text 18 Nov; move to Accelerate ($65 Mondays from 23 Nov) once signed"
+    },
+    {
       "name": "Tristan Lauder",
       "due": "2026-11-18",
       "state": "Due",
-      "status": "Happy to roll onto F&F 3x; 6 Month Agreement not signed yet",
+      "status": "Waiting on 6 Month Agreement · happy to roll onto F&F 3x",
       "visits": "1 + 1 + 2 + 0",
-      "action": "Reminder sent 18 Nov; roll over once signed"
+      "action": "Agreement re-sent + reminder text 18 Nov; roll over once signed"
     },
     {
       "name": "Maddy Braund",
@@ -262,10 +262,10 @@
     }
   ],
   "rate": {
-    "rolled": 3,
+    "rolled": 2,
     "no": 1,
-    "eligible": 4,
-    "percent": 75,
+    "eligible": 3,
+    "percent": 67,
     "target": 80
   },
   "prior": {
@@ -285,7 +285,7 @@
     "rolled": 12,
     "eligible": 13
   },
-  "syncNote": "Midweek figures come from the NMS app (roll-overs, straight to membership, sales, rate) after matching it to Clubworx on 18 Nov, and Clubworx / the Cancellation Analysis sheet (autopay cancellations by end date). Stevie Holland and Tomas Mckewen (bad debt) are listed separately; counting them makes 9 cancellations and net -6.",
+  "syncNote": "Midweek figures come from the NMS app (roll-overs, straight to membership, sales, rate) after matching it to Clubworx on 18 Nov, and Clubworx / the Cancellation Analysis sheet (autopay cancellations by end date). Stevie Holland and Tomas Mckewen (bad debt) are listed separately; counting them makes 9 cancellations and net -7. Matthew Dundee and Tristan Lauder are waiting on their 6 Month Agreements and count as roll-overs once signed.",
   "cancellationPolicy": "Only autopay memberships count. Kickstarter, trial and Short Term endings, casuals, deposits, sponsorships, tour products, downgrades and other one-off products are excluded. Bad-debt cancellations are shown separately.",
   "lookAhead": {
     "period": "Fri 20 – Thu 26 Nov",
