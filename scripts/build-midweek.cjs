@@ -4,7 +4,7 @@ const fs = require('node:fs');
 const path = require('node:path');
 const assert = require('node:assert/strict');
 const root = path.resolve(__dirname, '..');
-const file = process.argv[2] ?? 'data/2026-11-06-to-12.json';
+const file = process.argv[2] ?? 'data/2026-11-13-to-19.json';
 const d = JSON.parse(fs.readFileSync(path.resolve(root, file), 'utf8'));
 // Keep the current page's look: reuse its style block
 const css = fs.readFileSync(path.join(root, 'index.html'), 'utf8').match(/<style>([\s\S]*?)<\/style>/)[1].trim();
@@ -55,12 +55,12 @@ const html = `<!doctype html>
 <style>${css}</style></head>
 <body><main class="wrap">
 <header class="header"><div class="logo">UM</div><div><h1>Midweek Numbers</h1><p>Urban Muaythai · Miami · Friday–Thursday reporting period</p></div></header>
-<div class="period"><div><h2>${esc(day(d.period.start))} – ${esc(day(d.period.end))} 2026</h2><p>Week ${d.period.week} · ${esc(cutoff)} midweek check</p><span class="currentflag">Live · not yet final</span></div><div class="asof">Checked against NMS app + Daily Numbers<br>${esc(d.period.checked)}</div></div>
+<div class="period"><div><h2>${esc(day(d.period.start))} – ${esc(day(d.period.end))} 2026</h2><p>Week ${d.period.week} · ${esc(cutoff)} midweek check</p><span class="currentflag">Live · not yet final</span></div><div class="asof">Checked against NMS app + Clubworx<br>${esc(d.period.checked)}</div></div>
 
 <section class="qa"><h3>The headline</h3><p>${esc(`NMS records ${rolled} rollovers and ${stm} straight-to-membership against ${count} autopay cancellations, for net movement of ${signed(net)}. Intro sales are ${intro}, with ${money(total)} recorded across ${d.sales.length} sale records. ${rolled} of ${eligible} rollover decisions so far rolled over (${pct}%). The week is still open: ${d.pipeline.length} decisions are outstanding.`)}</p></section>
 
-<section class="qa"><h3>Weekly management answers</h3><p class="intro">The headline figures below match the live Week ${d.daily.week} Daily Numbers grid (synced with the NMS app). Kickstarter, trial, Short Term, casual, deposit and tour-product endings are excluded from cancellations.</p><div class="qa-list">
-${qa('How many cancellations are recorded?', `${count} counted · matches Daily Numbers`, 'gold')}
+<section class="qa"><h3>Weekly management answers</h3><p class="intro">The headline figures below come from the NMS app (matched to Clubworx) and Clubworx autopay cancellations by end date. Kickstarter, trial, Short Term, casual, deposit and tour-product endings are excluded from cancellations.</p><div class="qa-list">
+${qa('How many cancellations are recorded?', `${count} counted · autopay, by end date`, 'gold')}
 ${qa('How many rollovers and direct joins are recorded?', `${rolled} rollovers · ${stm} straight to membership`)}
 ${qa('Growth, loss or neutral?', `Net movement: ${signed(net)}`, netColor)}
 ${qa('Current rollover rate against the 80% target?', `${pct}% — ${rolled} of ${eligible} eligible outcomes`, pct >= d.rate.target ? 'green' : 'red')}
@@ -68,15 +68,15 @@ ${qa('Which rollover decisions still need attention?', `${d.pipeline.length} ope
 ${qa('How many sales and deposits are recorded?', `${intro} intro · ${d.sales.length} sale records · ${money(total)} recorded`)}
 </div></section>
 <div class="cards">
-${card('Daily Numbers cancellations', count, `${d.daily.adultCancellations} adults · ${d.daily.teensCancellations} teens · ${d.daily.kidsCancellations} kid${d.daily.kidsCancellations === 1 ? '' : 's'}`, 'red')}
+${card('Autopay cancellations', count, `${d.daily.adultCancellations} adults · ${d.daily.teensCancellations} teens · ${d.daily.kidsCancellations} kid${d.daily.kidsCancellations === 1 ? '' : 's'}`, 'red')}
 ${card('Rollovers recorded', rolled, rolledList.map(o => first(o.name)).join(' · '), 'green')}
 ${card('Straight to membership', stm, stmList.map(o => o.name).join(' · ') || 'None yet', 'green')}
 ${card('Net movement', signed(net), `${rolled} RO + ${stm} STM − ${count} cancels`, netColor)}
 ${card('Current rollover rate', pct + '%', `${rolled} of ${eligible} · target ${d.rate.target}%`, pct >= d.rate.target ? 'green' : 'red')}
-${card('Intro sales', intro, `${d.daily.phone} phone · ${d.daily.walkIn} walk-in · ${d.daily.other} other`, 'gold')}
+${card('Intro sales', intro, `${d.daily.phone} phone · ${d.daily.walkIn} walk-in · ${d.daily.referral} referral · ${d.daily.other} other`, 'gold')}
 </div>
 
-${section(`Cancellations — ${count} counted, matching Daily Numbers`, `Autopay memberships with an effective end date from ${day(d.period.start)} to ${day(d.period.end)}.`, table(['Member','Effective end','Membership','Reason'], d.operatingCancellations.map(c=>[c.name, day(c.end), c.membership, c.reason])))}
+${section(`Cancellations — ${count} counted (autopay)`, `Autopay memberships with an effective end date from ${day(d.period.start)} to ${day(d.period.end)}.`, table(['Member','Effective end','Membership','Reason'], d.operatingCancellations.map(c=>[c.name, day(c.end), c.membership, c.reason])))}
 
 ${section('Excluded endings — not counted as cancellations', 'These records fall inside the period but are not operating churn under the reporting rule.', table(['Member / record','Date','Membership','Why excluded'], d.excluded.map(c=>[c.name, day(c.end), c.membership, c.why])))}
 
@@ -92,11 +92,11 @@ ${section(`Previous week comparison — ${p.label}`, 'The previous week is close
 ['Net movement', signed(net), signed(p.net), signed(net - p.net) || 'No change'],
 ['Intro sales', intro, p.intro, signed(intro - p.intro) || 'No change'],
 ['Current rollover rate', `${rolled}/${eligible} = ${pct}%`, `${p.rolled}/${p.eligible} = ${Math.round(p.rolled / p.eligible * 100)}%`, pct === Math.round(p.rolled / p.eligible * 100) ? 'No change' : `${signed(pct - Math.round(p.rolled / p.eligible * 100))} pts`],
-]) + '<p><a href="reports/2026-10-30-to-11-05-final.html">30 Oct – 5 Nov final</a> · <a href="reports/2026-10-30-to-11-05-midweek.html">30 Oct – 5 Nov midweek</a> · <a href="reports/2026-10-23-to-29-final.html">23–29 October final</a> · <a href="reports/2026-10-16-to-22.html">16–22 October</a></p>')}
+]) + '<p><a href="reports/2026-11-06-to-12-final.html">6–12 Nov final</a> · <a href="reports/2026-11-06-to-12-midweek.html">6–12 Nov midweek</a> · <a href="reports/2026-10-30-to-11-05-final.html">30 Oct – 5 Nov final</a> · <a href="reports/2026-10-23-to-29-final.html">23–29 October final</a> · <a href="reports/2026-10-16-to-22.html">16–22 October</a></p>')}
 
 <section class="caution"><h3>Where the numbers come from — week still open</h3><p>${esc(d.syncNote)}</p></section>
 <footer class="footer">Urban Muaythai · Midweek Numbers · ${esc(range)} 2026 · checked ${esc(d.period.checked)}<br>
-<a href="${esc(d.sources.daily)}">Daily Numbers grid</a> · <a href="${esc(d.sources.cancellations)}">Cancellation Raw Dump</a> · <a href="${esc(d.sources.nms)}">NMS reports</a> · <a href="${esc(file)}">Reviewed data snapshot</a>
+<a href="${esc(d.sources.daily)}">Daily Numbers grid</a> · <a href="${esc(d.sources.cancellations)}">Cancellation Analysis</a> · <a href="${esc(d.sources.nms)}">NMS reports</a> · <a href="${esc(file)}">Reviewed data snapshot</a>
 </footer>
 </main>
 </body>
