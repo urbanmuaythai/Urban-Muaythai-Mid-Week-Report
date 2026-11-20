@@ -1,33 +1,33 @@
 {
   "period": {
     "start": "2026-11-13",
-    "cutoff": "2026-11-18",
+    "cutoff": "2026-11-19",
     "end": "2026-11-19",
     "week": 29,
     "timezone": "Australia/Brisbane",
-    "status": "Midweek; week still open",
-    "checked": "Wed 18 November 2026 · Brisbane"
+    "status": "Final; week closed",
+    "checked": "Fri 20 November 2026 · Brisbane"
   },
   "sources": {
     "daily": "https://docs.google.com/spreadsheets/d/1sqS2xjIz03pmcEqY2WEoK-jrrqveNF0-UNvAaXbOhRg/edit#gid=128889242",
     "nms": "https://urban-army-nms.vercel.app/reports",
     "cancellations": "https://docs.google.com/spreadsheets/d/1GTl8AV8nsBo2ZjdGeSwpVOytQZHs0POdkNBQ4iQZrEE/edit#gid=205602514",
-    "readDate": "2026-11-18"
+    "readDate": "2026-11-20"
   },
   "daily": {
     "week": 29,
-    "rollovers": 2,
-    "intro": 5,
-    "phone": 0,
+    "rollovers": 4,
+    "intro": 10,
+    "phone": 7,
     "walkIn": 0,
-    "referral": 1,
-    "other": 4,
-    "straightToMembership": 0,
-    "cancellations": 7,
+    "referral": 3,
+    "other": 0,
+    "straightToMembership": 1,
+    "cancellations": 8,
     "adultCancellations": 6,
-    "teensCancellations": 1,
+    "teensCancellations": 2,
     "kidsCancellations": 0,
-    "net": -5
+    "net": -3
   },
   "operatingCancellations": [
     {
@@ -64,13 +64,19 @@
       "name": "Poyong Huang",
       "membership": "Fun & Fitness (3 classes per week) Weekly T6",
       "end": "2026-11-19",
-      "reason": "Injury (wrist surgery); Thursday ending already entered"
+      "reason": "Injury (wrist surgery)"
     },
     {
       "name": "Juliet Swanepoel.",
       "membership": "Fun & Fitness (3 classes per week) Weekly T6",
       "end": "2026-11-19",
-      "reason": "Medical (doctor's letter); Thursday ending already entered"
+      "reason": "Medical (doctor's letter)"
+    },
+    {
+      "name": "Harrison Clack",
+      "membership": "Teens Class (unlimited)",
+      "end": "2026-11-19",
+      "reason": "Teen; cancelled by Richie 19 Nov, reason not recorded yet (asking Richie)"
     }
   ],
   "excluded": [
@@ -99,16 +105,28 @@
       "why": "Kickstarter outcomes (NRO / NO / NRO in NMS)"
     },
     {
-      "name": "Max Freund, Maddy + Cohen Braund, Harrison Lyon",
-      "end": "18-19 Nov",
+      "name": "Cohen Braund, Harrison Lyon",
+      "end": "19 Nov",
       "membership": "Teens 1 Week Trials",
-      "why": "Trial expiries; roll-over texts sent 18 Nov"
+      "why": "Trial expiries; roll-over forms sent, still in the pipeline"
     },
     {
       "name": "Jakob Taylor, Lewis Haig",
       "end": "Thu 19 Nov",
       "membership": "Accelerate WEEKLY 6 month membership",
       "why": "Downgrades to Fun & Fitness, still members"
+    },
+    {
+      "name": "Ceejay Finn-Togo",
+      "end": "Thu 19 Nov",
+      "membership": "15-18 years (3x per week)",
+      "why": "Downgrade to Teens Class (2x), still a member (Mel)"
+    },
+    {
+      "name": "Cooper Traill, Lukas nazal",
+      "end": "Thu 19 Nov",
+      "membership": "Teens Class (unlimited) / F&F 3x T6",
+      "why": "Upgrades (15-18 Unlimited / Accelerate 6 month), still members"
     }
   ],
   "outcomes": [
@@ -151,6 +169,30 @@
       "from": "KS 28 days",
       "to": "Finishing the Kickstarter later (Mel OK)",
       "type": "KS 28 days"
+    },
+    {
+      "name": "Ella COOK",
+      "status": "Straight to Membership",
+      "date": "2026-11-18",
+      "from": "Membership",
+      "to": "Teens Class (2x classes), $40 Wednesdays (Harry; brother Ethan is a member)",
+      "type": "Membership"
+    },
+    {
+      "name": "Max Freund",
+      "status": "Rolled Over",
+      "date": "2026-11-18",
+      "from": "1 Week Trial",
+      "to": "Teens Class (2x classes) from Thu 19 Nov",
+      "type": "1 Week Trial"
+    },
+    {
+      "name": "Maddy Braund",
+      "status": "Rolled Over",
+      "date": "2026-11-18",
+      "from": "1 Week Trial",
+      "to": "Teens Class (2x) from Wed 25 Nov, $36/wk sibling rate; Teens Direct Debit form still to be signed",
+      "type": "1 Week Trial"
     }
   ],
   "pipeline": [
@@ -158,99 +200,67 @@
       "name": "Remy Martinot",
       "due": "2026-11-02",
       "state": "Overdue",
-      "status": "Waiting · sick, mum to sign the Teens form when he is better",
+      "status": "Waiting · sick; second check-in text to mum 20 Nov",
       "visits": "2 + 0",
-      "action": "Check in again; set up Teens membership when the form is signed"
-    },
-    {
-      "name": "Jed Meadowcroft",
-      "due": "2026-11-04",
-      "state": "Overdue",
-      "status": "Blank · mum agreed to roll, 15-18 form still unsigned",
-      "visits": "3 + 2 + 3 + 2",
-      "action": "Mark Not Rolled Over on Fri 20 Nov if still unsigned (Mel)"
-    },
-    {
-      "name": "Max Freund",
-      "due": "2026-11-18",
-      "state": "Due",
-      "status": "Teens trial ended 17 Nov",
-      "visits": "1 + 0",
-      "action": "Roll-over text to dad sent 18 Nov, waiting on reply"
-    },
-    {
-      "name": "Cohen Braund",
-      "due": "2026-11-18",
-      "state": "Due",
-      "status": "Teens trial ends 18 Nov",
-      "visits": "1 + 0",
-      "action": "Roll-over text to mum sent 18 Nov (Play On voucher)"
+      "action": "Extended to Wed 25 Nov; Not Rolled Over if no reply"
     },
     {
       "name": "Matthew Dundee",
       "due": "2026-11-17",
-      "state": "Due",
-      "status": "Waiting on 6 Month Agreement · happy to roll over (note 14 Nov); still on Kickstarter plan in Clubworx",
+      "state": "Overdue",
+      "status": "Waiting on 6 Month Agreement · happy to roll over, still training (15 visits)",
       "visits": "2 + 3 + 2 + 6",
-      "action": "Agreement emailed + reminder text 18 Nov; move to Accelerate ($65 Mondays from 23 Nov) once signed"
+      "action": "Reminder text 20 Nov; Kickstarter $65 continues from Mon 23 Nov until signed"
     },
     {
-      "name": "Tristan Lauder",
+      "name": "Cohen Braund",
       "due": "2026-11-18",
-      "state": "Due",
-      "status": "Waiting on 6 Month Agreement · happy to roll onto F&F 3x",
-      "visits": "1 + 1 + 2 + 0",
-      "action": "Agreement re-sent + reminder text 18 Nov; roll over once signed"
-    },
-    {
-      "name": "Maddy Braund",
-      "due": "2026-11-19",
-      "state": "Due",
-      "status": "Teens trial ends 19 Nov; no classes yet",
-      "visits": "0 + 0",
-      "action": "Roll-over text to mum sent 18 Nov (Play On voucher)"
+      "state": "Overdue",
+      "status": "Teens trial ended · mum wants Teens 2x from Wed 25 Nov with Maddy",
+      "visits": "1 + 1",
+      "action": "Teens Direct Debit form (Mel sent 18 Nov) to be signed; Play On voucher to claim"
     },
     {
       "name": "Harrison Lyon",
       "due": "2026-11-19",
       "state": "Due",
       "status": "Dad says keen for Teens 2x",
-      "visits": "1 + 0",
-      "action": "Teens Class Direct Debit form sent 17 Nov; roll over once signed"
+      "visits": "1 + 1",
+      "action": "Form reminder to dad 19 Nov; roll over once signed"
     }
   ],
   "sales": [
     {
       "name": "Mami Moriya",
       "type": "KS 28 days",
-      "source": null,
+      "source": "Phone",
       "sold": "2026-11-14",
       "deposit": 65,
-      "note": "Kickstarter Weekly (Mel); first class Mon 16 Nov"
+      "note": "Kickstarter Weekly (Mel)"
     },
     {
       "name": "Bruno Ishikawa.",
       "type": "KS 28 days",
-      "source": null,
+      "source": "Phone",
       "sold": "2026-11-14",
       "deposit": 240,
-      "note": "Kickstarter Upfront (Mel); first class Mon 16 Nov"
+      "note": "Kickstarter Upfront (Mel)"
     },
     {
       "name": "Tulio Alves",
       "type": "KS 28 days",
-      "source": null,
+      "source": "Phone",
       "sold": "2026-11-14",
       "deposit": 240,
-      "note": "Kickstarter Upfront (Mel); first class Mon 16 Nov"
+      "note": "Kickstarter Upfront (Mel)"
     },
     {
       "name": "Montana Strong.",
       "type": "KS 28 days",
-      "source": null,
+      "source": "Phone",
       "sold": "2026-11-16",
       "deposit": 240,
-      "note": "Kickstarter Upfront (Richie); first class Mon 16 Nov"
+      "note": "Kickstarter Upfront (Richie)"
     },
     {
       "name": "liam fisher",
@@ -258,14 +268,62 @@
       "source": "Referral",
       "sold": "2026-11-17",
       "deposit": 65,
-      "note": "Kickstarter (Mel), referred by Logan Thomson; $65 cash - Upfront vs Weekly being checked with Mel"
+      "note": "Kickstarter (Mel), referred by Logan Thomson; $65 cash"
+    },
+    {
+      "name": "Kainoa Grant",
+      "type": "1 Week Trial",
+      "source": "Phone",
+      "sold": "2026-11-18",
+      "deposit": 99,
+      "note": "Teens trial (Mel); $99 POS"
+    },
+    {
+      "name": "Koa Miyabe",
+      "type": "1 Week Trial",
+      "source": "Phone",
+      "sold": "2026-11-18",
+      "deposit": 99,
+      "note": "Teens trial (Harry); $99 cash"
+    },
+    {
+      "name": "Reif Sheppard",
+      "type": "1 Week Trial",
+      "source": "Phone",
+      "sold": "2026-11-18",
+      "deposit": 99,
+      "note": "Teens trial; started Fri 20 Nov, $99 paid that morning"
+    },
+    {
+      "name": "Ella COOK",
+      "type": "Membership",
+      "source": "Referral",
+      "sold": "2026-11-18",
+      "deposit": 0,
+      "note": "Straight to membership, Teens 2x $40/wk (Harry); Play On voucher to claim"
+    },
+    {
+      "name": "Chase Fraser",
+      "type": "KS 28 days",
+      "source": "Referral",
+      "sold": "2026-11-19",
+      "deposit": 240,
+      "note": "15-18 Kickstarter Upfront (Harry), came in with his mate Joe"
+    },
+    {
+      "name": "Cam Taylor",
+      "type": "KS 28 days",
+      "source": "Referral",
+      "sold": "2026-11-19",
+      "deposit": 65,
+      "note": "Kickstarter Weekly (Richie), free first class from Mel; $65 not marked paid yet"
     }
   ],
   "rate": {
-    "rolled": 2,
+    "rolled": 4,
     "no": 1,
-    "eligible": 3,
-    "percent": 67,
+    "eligible": 5,
+    "percent": 80,
     "target": 80
   },
   "prior": {
@@ -285,7 +343,7 @@
     "rolled": 12,
     "eligible": 13
   },
-  "syncNote": "Midweek figures come from the NMS app (roll-overs, straight to membership, sales, rate) after matching it to Clubworx on 18 Nov, and Clubworx / the Cancellation Analysis sheet (autopay cancellations by end date). Stevie Holland and Tomas Mckewen (bad debt) are listed separately; counting them makes 9 cancellations and net -7. Matthew Dundee and Tristan Lauder are waiting on their 6 Month Agreements and count as roll-overs once signed.",
+  "syncNote": "Final figures come from the NMS app (roll-overs, straight to membership, sales, rate) and Clubworx / the Cancellation Analysis sheet (autopay cancellations by end date), checked Fri 20 Nov. Harrison Clack (teen, cancelled Thu 19 Nov) is added; the sheet had not picked him up yet. Stevie Holland and Tomas Mckewen (bad debt) are listed separately; counting them makes 10 cancellations and net -5.",
   "cancellationPolicy": "Only autopay memberships count. Kickstarter, trial and Short Term endings, casuals, deposits, sponsorships, tour products, downgrades and other one-off products are excluded. Bad-debt cancellations are shown separately.",
   "lookAhead": {
     "period": "Fri 20 – Thu 26 Nov",
@@ -293,17 +351,22 @@
       {
         "name": "Jacob Dunshea, Trent Smith, Aston Schulz.",
         "due": "Mon 23 Nov",
-        "note": "Jacob training well; Trent + Aston need the roll-over chat (Harry call list)"
+        "note": "Jacob: roll-over text to mum 19 Nov. Aston: dad chose 3x per week, form reminder 20 Nov. Trent: Harry call list"
       },
       {
         "name": "Paris Redwood",
         "due": "Mon 23 Nov",
-        "note": "Extended after a 1-week pause (achilles); payments resume 26 Nov"
+        "note": "Extended after a 1-week pause (achilles)"
       },
       {
         "name": "Francesc Risco",
         "due": "Tue 24 Nov",
-        "note": "Training well (5/3/6/3)"
+        "note": "Training well"
+      },
+      {
+        "name": "Kainoa Grant, Koa Miyabe",
+        "due": "Tue 24 / Wed 25 Nov",
+        "note": "Teens trials; roll-over texts on day 5"
       },
       {
         "name": "Beau Selwood.",
@@ -313,7 +376,12 @@
       {
         "name": "ELIAS BATISTA",
         "due": "Thu 26 Nov",
-        "note": "1 class, Kickstarter form unsigned; Richie calling 19 Nov"
+        "note": "1 class, Kickstarter form unsigned; Richie call, no note yet"
+      },
+      {
+        "name": "Reif Sheppard",
+        "due": "Thu 26 Nov",
+        "note": "Teens trial started Fri 20 Nov"
       }
     ],
     "cancellations": [
@@ -373,7 +441,8 @@
         "membership": "Kickstarter",
         "reason": "Already decided: Not Rolled Over"
       }
-    ]
+    ],
+    "alreadyDecided": "Already decided for next week: Tristan Lauder rolled over (Fri 20 Nov, F&F 3x T6), Jed Meadowcroft Not Rolled Over (Fri 20 Nov), Pheline Rosin Not Rolled Over (Mon 23 Nov)."
   },
   "shortTermMoves": []
 }
